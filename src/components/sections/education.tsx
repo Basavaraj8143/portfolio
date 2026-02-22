@@ -32,7 +32,8 @@ const educationData = [
 export function Education() {
     return (
         <Section id="education">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Education</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Education</h2>
+            <p className="text-center text-gray-500 mb-12 text-lg">My academic background</p>
             <div className="grid md:grid-cols-3 gap-4">
                 {educationData.map((edu, index) => (
                     <motion.div
@@ -44,16 +45,16 @@ export function Education() {
                     >
                         <Card className="h-full hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-black/10">
                             <CardContent className="pt-6 flex flex-col items-start h-full">
-                                <div className="mb-4 text-primary bg-primary/10 p-3 rounded-lg">
+                                <div className="mb-4 text-green-600 bg-green-50 p-3 rounded-lg">
                                     {edu.icon}
                                 </div>
                                 <span className="text-sm font-semibold bg-black text-white py-1 px-3 rounded-full mb-3">
                                     {edu.year}
                                 </span>
-                                <h3 className="text-xl font-bold mb-2">{edu.title}</h3>
-                                <p className="text-muted-foreground mb-4 flex-grow">{edu.institution}</p>
+                                <h3 className="text-xl font-bold mb-2 text-gray-900">{edu.title}</h3>
+                                <p className="text-gray-500 mb-4 flex-grow">{edu.institution}</p>
                                 <div className="mt-auto">
-                                    <span className="inline-block border border-foreground font-semibold px-4 py-1.5 rounded-full text-sm hover:bg-foreground hover:text-background transition-colors cursor-default">
+                                    <span className="inline-block border border-gray-300 text-gray-700 font-semibold px-4 py-1.5 rounded-full text-sm hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors cursor-default">
                                         {edu.grade}
                                     </span>
                                 </div>

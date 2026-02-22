@@ -36,7 +36,8 @@ const certificatesData = [
 export function Certificates() {
     return (
         <Section id="certificates">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Certificates</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Certificates</h2>
+            <p className="text-center text-gray-500 mb-12 text-lg">My professional credentials</p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {certificatesData.map((cert, index) => (
@@ -49,7 +50,7 @@ export function Certificates() {
                     >
                         <Card className="h-full hover:shadow-lg transition-all duration-300">
                             {/* Aspect ratio container for image */}
-                            <div className="relative aspect-video w-full overflow-hidden bg-muted border-b rounded-t-xl">
+                            <div className="relative aspect-video w-full overflow-hidden bg-gray-100 border-b rounded-t-2xl">
                                 <Image
                                     src={cert.image}
                                     alt={cert.title}
@@ -59,24 +60,24 @@ export function Certificates() {
                             </div>
 
                             <CardContent className="p-6 flex flex-col h-[calc(100%-aspect-ratio)]">
-                                <h3 className="text-lg font-bold mb-1 line-clamp-2" title={cert.title}>
+                                <h3 className="text-lg font-bold mb-1 line-clamp-2 text-gray-900" title={cert.title}>
                                     {cert.title}
                                 </h3>
-                                <p className="text-sm font-medium text-primary mb-3">{cert.issuer}</p>
+                                <p className="text-sm font-medium text-green-600 mb-3">{cert.issuer}</p>
 
-                                <p className="text-muted-foreground text-sm mb-6 flex-grow line-clamp-4">
+                                <p className="text-gray-500 text-sm mb-6 flex-grow line-clamp-4">
                                     {cert.description}
                                 </p>
 
-                                <div className="flex items-center justify-between mt-auto pt-4 border-t">
-                                    <span className="px-2.5 py-0.5 rounded-full border bg-secondary/50 text-xs font-semibold">
+                                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                                    <span className="px-2.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-gray-600 text-xs font-semibold">
                                         {cert.badge}
                                     </span>
                                     <a
                                         href={cert.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-sm font-medium hover:underline hover:text-primary transition-colors flex items-center gap-1"
+                                        className="text-sm font-medium text-gray-600 hover:text-green-600 hover:underline transition-colors flex items-center gap-1"
                                     >
                                         View Credential →
                                     </a>

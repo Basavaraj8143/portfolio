@@ -56,8 +56,8 @@ export function Projects() {
     return (
         <Section id="projects">
             <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-                <p className="text-muted-foreground text-lg">A showcase of my recent work</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">My Projects</h2>
+                <p className="text-gray-500 text-lg">A showcase of my recent work</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,8 +69,8 @@ export function Projects() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <Card className="h-full overflow-hidden flex flex-col group hover:shadow-xl transition-all duration-300 border-border/50">
-                            <div className="relative h-48 w-full overflow-hidden bg-muted">
+                        <Card className="h-full overflow-hidden flex flex-col group">
+                            <div className="relative h-48 w-full overflow-hidden bg-gray-100">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -80,11 +80,11 @@ export function Projects() {
                                 />
                             </div>
                             <CardContent className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                                <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <p className="text-muted-foreground mb-4 text-sm leading-relaxed flex-grow">
+                                <p className="text-gray-500 mb-4 text-sm leading-relaxed flex-grow">
                                     {project.description}
                                 </p>
 
@@ -92,7 +92,7 @@ export function Projects() {
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-2.5 py-0.5 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
+                                            className="px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 border border-gray-200 text-xs font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -102,13 +102,13 @@ export function Projects() {
                                 <div className="flex gap-3 pt-2">
                                     <a
                                         href={project.links.snapshot}
-                                        className={buttonVariants({ variant: "outline", size: "sm", className: "w-full gap-2 text-xs" })}
+                                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-xs font-semibold hover:bg-gray-50 transition-all"
                                     >
                                         <Camera className="w-3.5 h-3.5" /> Snapshots
                                     </a>
                                     <a
                                         href={project.links.github}
-                                        className={buttonVariants({ variant: "primary", size: "sm", className: "w-full gap-2 text-xs" })}
+                                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-xs font-semibold hover:bg-gray-700 transition-all"
                                     >
                                         <Github className="w-3.5 h-3.5" /> Code
                                     </a>

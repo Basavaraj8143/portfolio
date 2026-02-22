@@ -40,8 +40,9 @@ const skillsData = [
 
 export function Skills() {
     return (
-        <Section id="skills" className="bg-muted/30">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">My Skills</h2>
+        <Section id="skills">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">My Skills</h2>
+            <p className="text-center text-gray-500 mb-12 text-lg">Technologies I work with</p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {skillsData.map((category, index) => (
                     <motion.div
@@ -49,19 +50,19 @@ export function Skills() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        transition={{ duration: 0.5, delay: index * 0.08 }}
                     >
-                        <Card className="h-full hover:shadow-md transition-shadow min-h-[180px]">
+                        <Card className="h-full min-h-[180px]">
                             <CardContent className="pt-6 p-6 text-center">
-                                <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4">
+                                <div className="mx-auto w-12 h-12 flex items-center justify-center rounded-full bg-green-50 text-green-600 mb-4">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold mb-4">{category.category}</h3>
+                                <h3 className="text-xl font-bold mb-4 text-gray-900">{category.category}</h3>
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {category.skills.map((skill) => (
                                         <span
                                             key={skill}
-                                            className="px-3 py-1 bg-background border rounded-full text-sm lg:text-base font-medium hover:bg-foreground hover:text-background hover:scale-105 transition-all cursor-default"
+                                            className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-900 hover:text-white hover:border-gray-900 hover:scale-105 transition-all cursor-default"
                                         >
                                             {skill}
                                         </span>

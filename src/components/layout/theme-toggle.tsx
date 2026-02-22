@@ -4,14 +4,20 @@ import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // Default to light, only respect saved "dark" if explicitly set
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
+    const initialTheme = savedTheme === "dark" ? "dark" : "light";
+    setTheme(initialTheme);
+    document.documentElement.setAttribute("data-theme", initialTheme);
+    // If old dark was saved with no explicit user choice, reset to light
+    if (!savedTheme) {
+      localStorage.setItem("theme", "light");
     }
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
@@ -21,14 +27,17 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", newTheme);
   };
 
+  if (!mounted) return null;
+
   return (
     <button
+      suppressHydrationWarning
       onClick={toggleTheme}
-      className="fixed top-4 right-4 z-50 p-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
+      className="fixed top-4 right-4 z-50 p-2 rounded-full bg-gray-100 border border-gray-200 hover:bg-gray-200 transition-all duration-300 shadow-sm"
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <Moon className="w-5 h-5 text-gray-700" />
+        <Moon className="w-5 h-5 text-gray-600" />
       ) : (
         <Sun className="w-5 h-5 text-yellow-500" />
       )}

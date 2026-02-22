@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 export function About() {
     return (
-        <Section id="about" className="bg-muted/30">
+        <Section id="about" className="bg-gray-50">
             <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                    I&apos;m <strong>Busss</strong>, a Computer Science student passionate about problem solving,
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Me</h2>
+                <p className="text-lg text-gray-500 leading-relaxed">
+                    I&apos;m <strong className="text-gray-900">Busss</strong>, a Computer Science student passionate about problem solving,
                     building impactful projects, and continuously improving my skills.
                     My goal is to become a skilled software engineer and contribute to
                     real-world tech solutions.
@@ -50,13 +50,13 @@ function HighlightCard({ icon, title, description, delay }: { icon: React.ReactN
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
         >
-            <Card className="h-full text-center hover:border-primary/50 transition-all duration-300 max-w-[280px] mx-auto hover:-translate-y-2 hover:shadow-lg hover:shadow-black/10">
+            <Card className="h-full text-center max-w-[280px] mx-auto">
                 <CardContent className="pt-6 flex flex-col items-center gap-4">
-                    <div className="p-3 rounded-full bg-primary/10 text-primary mb-2">
+                    <div className="p-3 rounded-full bg-green-50 text-green-600 mb-2">
                         {icon}
                     </div>
-                    <h3 className="text-xl font-semibold">{title}</h3>
-                    <p className="text-muted-foreground">{description}</p>
+                    <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+                    <p className="text-gray-500">{description}</p>
                 </CardContent>
             </Card>
         </motion.div>

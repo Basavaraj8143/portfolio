@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 const navItems = [
     { name: "Home", href: "#home" },
@@ -32,33 +31,35 @@ export function Navbar() {
     return (
         <header
             className={cn(
-                "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-4xl rounded-full border",
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "bg-white/10 backdrop-blur-2xl border-white/20 shadow-xl shadow-black/10 py-3 px-6"
-                    : "bg-white/5 backdrop-blur-xl border-white/10 shadow-lg shadow-black/5 py-4 px-4"
+                    ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3"
+                    : "bg-transparent py-4"
             )}
         >
-            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="#home" className="text-xl font-bold tracking-tight">
+            <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
+                <Link href="#home" className="text-xl font-bold tracking-tight text-gray-900">
                     Portfolio
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-6">
+                <nav className="hidden lg:flex items-center gap-8">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="text-sm font-medium hover:text-primary transition-colors"
+                            className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
                         >
                             {item.name}
+                            <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-teal-500 group-hover:w-full transition-all duration-300 rounded-full" />
                         </Link>
                     ))}
                 </nav>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="lg:hidden p-2"
+                    suppressHydrationWarning
+                    className="lg:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
@@ -69,26 +70,26 @@ export function Navbar() {
             {/* Mobile Nav */}
             {isOpen && (
                 <>
-                    <div 
-                        className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+                    <div
+                        className="fixed inset-0 bg-black/20 z-40 lg:hidden"
                         onClick={() => setIsOpen(false)}
                     />
-                    <div className="fixed inset-y-0 right-0 w-3/4 bg-gray-900 z-50 shadow-lg lg:hidden transform transition-transform duration-300 ease-in-out translate-x-0 animate-in slide-in-from-right-full">
-                        <div className="flex justify-between items-center p-4">
-                            <span className="text-white text-lg font-semibold">Portfolio</span>
+                    <div className="fixed inset-y-0 right-0 w-3/4 bg-white z-50 shadow-2xl lg:hidden border-l border-gray-100">
+                        <div className="flex justify-between items-center p-5 border-b border-gray-100">
+                            <span className="text-gray-900 text-lg font-semibold">Portfolio</span>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-white hover:text-gray-300"
+                                className="text-gray-600 hover:text-gray-900"
                             >
                                 <X className="h-6 w-6" />
                             </button>
                         </div>
-                        <nav className="flex flex-col p-4 gap-2">
+                        <nav className="flex flex-col p-5 gap-1">
                             {navItems.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="text-white text-lg font-medium hover:bg-gray-700 rounded-lg px-4 py-3 transition-colors"
+                                    className="text-gray-700 text-base font-medium hover:bg-gray-50 rounded-lg px-4 py-3 transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {item.name}

@@ -39,8 +39,9 @@ const hackathonsData = [
 
 export function Hackathons() {
     return (
-        <Section id="hackathons" className="bg-muted/30">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Hackathons & Competitions</h2>
+        <Section id="hackathons" className="bg-gray-50">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Hackathons &amp; Competitions</h2>
+            <p className="text-center text-gray-500 mb-12 text-lg">Events I&apos;ve participated in</p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {hackathonsData.map((hackathon, index) => (
@@ -64,12 +65,12 @@ export function Hackathons() {
                                 </div>
                             </div>
                             <CardContent className="p-6 flex flex-col flex-grow">
-                                <div className="flex items-center gap-2 mb-2 text-sm text-primary font-medium">
+                                <div className="flex items-center gap-2 mb-2 text-sm text-green-600 font-medium">
                                     {hackathon.icon}
                                     <span>{hackathon.role}</span>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">{hackathon.title}</h3>
-                                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
+                                <h3 className="text-xl font-bold mb-3 text-gray-900">{hackathon.title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
                                     {hackathon.description}
                                 </p>
                                 {hackathon.link && (
@@ -77,7 +78,7 @@ export function Hackathons() {
                                         href={hackathon.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={buttonVariants({ variant: "outline", size: "sm", className: "w-full gap-2 mt-auto" })}
+                                        className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-all mt-auto"
                                     >
                                         View Project <ExternalLink className="w-3 h-3" />
                                     </a>
