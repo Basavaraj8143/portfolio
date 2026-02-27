@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const navItems = [
     { name: "Home", href: "#home" },
@@ -19,6 +20,7 @@ const navItems = [
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const navRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,6 +32,8 @@ export function Navbar() {
 
     return (
         <header
+            ref={navRef}
+            data-no-splash
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
@@ -37,6 +41,7 @@ export function Navbar() {
                     : "bg-transparent py-4"
             )}
         >
+            <CustomCursor containerRef={navRef} />
             <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
                 <Link href="#home" className="text-xl font-bold tracking-tight text-gray-900">
                     Portfolio

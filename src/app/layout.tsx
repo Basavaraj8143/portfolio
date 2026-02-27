@@ -15,7 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className="antialiased">
-        <SplashCursor />
+        <SplashCursor
+          DENSITY_DISSIPATION={4}
+          VELOCITY_DISSIPATION={5}
+          SPLAT_RADIUS={0.1}
+          SPLAT_FORCE={3000}
+          PRESSURE={0.05}
+          CURL={2}
+        />
         {children}
       </body>
     </html>
