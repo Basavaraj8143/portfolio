@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SplashCursor from "@/components/ui/SplashCursor";
 
 export const metadata: Metadata = {
   title: "Busss | Portfolio",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className="antialiased">
+        <SplashCursor />
         {children}
       </body>
     </html>
