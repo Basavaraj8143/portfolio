@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Education } from "@/components/sections/education";
 import { Skills } from "@/components/sections/skills";
+import { TechLogoLoop } from "@/components/sections/tech-logo-loop";
 import { Projects } from "@/components/sections/projects";
 import { Hackathons } from "@/components/sections/hackathons";
 import { Certificates } from "@/components/sections/certificates";
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Education />
       <Skills />
+      <TechLogoLoop />
       <Projects />
       <Hackathons />
       <Certificates />
