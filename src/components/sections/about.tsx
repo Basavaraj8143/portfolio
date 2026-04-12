@@ -4,6 +4,7 @@ import { Section } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Heart, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { siteData } from "@/lib/site-data";
 
 export function About() {
     return (
@@ -11,7 +12,7 @@ export function About() {
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Me</h2>
                 <p className="text-lg text-gray-500 leading-relaxed">
-                    I&apos;m <strong className="text-gray-900">Busss</strong>, a Computer Science student passionate about problem solving,
+                    I&apos;m <strong className="text-gray-900">{siteData.shortName}</strong>, a Computer Science student passionate about problem solving,
                     building impactful projects, and continuously improving my skills.
                     My goal is to become a skilled software engineer and contribute to
                     real-world tech solutions.

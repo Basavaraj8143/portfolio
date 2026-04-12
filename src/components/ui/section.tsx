@@ -10,7 +10,7 @@ interface SectionProps {
 export function Section({ children, id, className }: SectionProps) {
     return (
         <section id={id} className={cn("py-16 md:py-24", className)}>
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
                 {children}
             </div>
         </section>

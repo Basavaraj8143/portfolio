@@ -12,42 +12,42 @@ const projectsData = [
         description: "A complete booking system with PHP, MySQL, and a modern frontend.",
         image: "/back.jpg",
         tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
     {
         title: "Criminal Management System",
         description: "A DBMS project for maintaining criminal records with role-based access.",
         image: "/back.jpg",
         tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
     {
         title: "NEO-LEDGER X",
         description: "A FinTech hackathon project featuring facial recognition sign-up/login.",
         image: "/back.jpg",
         tags: ["React", "JavaScript", "Node.js"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
     {
         title: "Email Scraper Tool",
         description: "A hackathon tool that generates business links and scrapes contact emails.",
         image: "/back.jpg",
         tags: ["Python", "Flask", "Ollama", "CSV"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
     {
         title: "Fake News Detector",
         description: "A Chrome extension using Gemini API for fake news and deepfake detection.",
         image: "/back.jpg",
         tags: ["JavaScript", "Chrome API", "Gemini"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
     {
         title: "Restaurant Management System",
         description: "A mini project to manage orders, menus, and reservations using PHP + MySQL.",
         image: "/back.jpg",
         tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "#", snapshot: "#" },
+        links: { github: "", snapshot: "" },
     },
 ];
 
@@ -148,18 +148,34 @@ function TiltCard({ project, index }: { project: typeof projectsData[0]; index: 
                     </div>
 
                     <div className="flex gap-3 pt-2">
-                        <a
-                            href={project.links.snapshot}
-                            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-xs font-semibold hover:bg-gray-50 transition-all"
-                        >
-                            <Camera className="w-3.5 h-3.5" /> Snapshots
-                        </a>
-                        <a
-                            href={project.links.github}
-                            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-xs font-semibold hover:bg-gray-700 transition-all"
-                        >
-                            <Github className="w-3.5 h-3.5" /> Code
-                        </a>
+                        {project.links.snapshot ? (
+                            <a
+                                href={project.links.snapshot}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-xs font-semibold hover:bg-gray-50 transition-all"
+                            >
+                                <Camera className="w-3.5 h-3.5" /> Snapshots
+                            </a>
+                        ) : (
+                            <span className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-400 text-xs font-semibold bg-gray-50 cursor-not-allowed">
+                                <Camera className="w-3.5 h-3.5" /> Preview Soon
+                            </span>
+                        )}
+                        {project.links.github ? (
+                            <a
+                                href={project.links.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-xs font-semibold hover:bg-gray-700 transition-all"
+                            >
+                                <Github className="w-3.5 h-3.5" /> Code
+                            </a>
+                        ) : (
+                            <span className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-300 text-white text-xs font-semibold cursor-not-allowed">
+                                <Github className="w-3.5 h-3.5" /> Code Soon
+                            </span>
+                        )}
                     </div>
                 </div>
             </motion.div>

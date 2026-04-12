@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { siteData } from "@/lib/site-data";
 
 export function Hero() {
     return (
@@ -19,14 +19,13 @@ export function Hero() {
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4 text-gray-900">
                         Hi, I&apos;m{" "}
-                        <span className="gradient-text">Busss</span>
+                        <span className="gradient-text">{siteData.shortName}</span>
                     </h1>
                     <h2 className="text-xl md:text-2xl text-gray-600 font-medium">
-                        CSE Student | Aspiring Software Engineer
+                        {siteData.role}
                     </h2>
                     <p className="text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        I love building practical projects, learning daily, and aiming for a
-                        great career in tech.
+                        {siteData.bio}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
@@ -37,7 +36,7 @@ export function Hero() {
                             View Projects
                         </Link>
                         <Link
-                            href="/resume.pdf"
+                            href={siteData.resumePath}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm hover:-translate-y-0.5"
@@ -47,9 +46,11 @@ export function Hero() {
                     </div>
 
                     <div className="flex gap-3 justify-center lg:justify-start pt-2">
-                        <SocialLink href="https://github.com/Basavaraj8143" icon={<Github />} label="GitHub" />
-                        <SocialLink href="https://linkedin.com/in/basavaraj-ningasani-0796712a5" icon={<Linkedin />} label="LinkedIn" />
-                        <SocialLink href="https://x.com/yourusername" icon={<Twitter />} label="Twitter" />
+                        <SocialLink href={siteData.social.github} icon={<Github />} label="GitHub" />
+                        <SocialLink href={siteData.social.linkedin} icon={<Linkedin />} label="LinkedIn" />
+                        {siteData.social.twitter ? (
+                            <SocialLink href={siteData.social.twitter} icon={<Twitter />} label="Twitter" />
+                        ) : null}
                     </div>
                 </motion.div>
 
@@ -75,7 +76,7 @@ export function Hero() {
                         <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white shadow-2xl z-10">
                             <Image
                                 src="/img.jpg"
-                                alt="Busss"
+                                alt={siteData.name}
                                 fill
                                 className="object-cover transition-transform hover:scale-110 duration-500"
                                 priority

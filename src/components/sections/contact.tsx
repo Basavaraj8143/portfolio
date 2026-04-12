@@ -1,10 +1,9 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { motion } from "framer-motion";
 import { useState } from "react";
+import { siteData } from "@/lib/site-data";
 
 export function Contact() {
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -31,7 +30,7 @@ export function Contact() {
             } else {
                 setStatus("error");
             }
-        } catch (error) {
+        } catch {
             setStatus("error");
         }
     }
@@ -65,9 +64,9 @@ export function Contact() {
                     </div>
 
                     <div className="grid gap-6">
-                        <ContactItem icon={<Mail />} label="Email" value="basavarajningasani123@gmail.com" />
-                        <ContactItem icon={<Phone />} label="Phone" value="+91 7019910124" />
-                        <ContactItem icon={<MapPin />} label="Location" value="Karnataka, India" />
+                        <ContactItem icon={<Mail />} label="Email" value={siteData.email} />
+                        <ContactItem icon={<Phone />} label="Phone" value={siteData.phone} />
+                        <ContactItem icon={<MapPin />} label="Location" value={siteData.location} />
                     </div>
                 </div>
 

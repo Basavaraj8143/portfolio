@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SplashCursor from "@/components/ui/SplashCursor";
+import { siteData } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Busss | Portfolio",
-  description: "Computer Science student passionate about problem solving and building impactful projects.",
+  title: siteData.title,
+  description: siteData.summary,
 };
 
 export default function RootLayout({

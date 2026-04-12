@@ -2,7 +2,6 @@
 
 import { Section } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import { ExternalLink, Trophy, Users, Mic } from "lucide-react";
 import { motion } from "framer-motion";
@@ -43,7 +42,7 @@ export function Hackathons() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Hackathons &amp; Competitions</h2>
             <p className="text-center text-gray-500 mb-12 text-lg">Events I&apos;ve participated in</p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {hackathonsData.map((hackathon, index) => (
                     <motion.div
                         key={index}
@@ -53,35 +52,39 @@ export function Hackathons() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                         <Card className="h-full overflow-hidden flex flex-col hover:border-black transition-colors">
-                            <div className="relative h-48 w-full border-b">
+                            <div className="relative h-40 md:h-44 w-full border-b">
                                 <Image
                                     src={hackathon.image}
                                     alt={hackathon.title}
                                     fill
                                     className="object-cover"
                                 />
-                                <div className="absolute top-4 right-4 bg-black text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg">
+                                <div className="absolute top-3 right-3 bg-black text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-lg">
                                     {hackathon.badge}
                                 </div>
                             </div>
-                            <CardContent className="p-6 flex flex-col flex-grow">
-                                <div className="flex items-center gap-2 mb-2 text-sm text-green-600 font-medium">
+                            <CardContent className="p-5 flex flex-col">
+                                <div className="flex items-center gap-2 mb-1 text-sm text-green-600 font-medium">
                                     {hackathon.icon}
                                     <span>{hackathon.role}</span>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-gray-900">{hackathon.title}</h3>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-grow">
+                                <h3 className="text-xl font-bold mb-2 text-gray-900">{hackathon.title}</h3>
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-4">
                                     {hackathon.description}
                                 </p>
-                                {hackathon.link && (
+                                {hackathon.link ? (
                                     <a
                                         href={hackathon.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-all mt-auto"
+                                        className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold hover:bg-gray-50 transition-all"
                                     >
                                         View Project <ExternalLink className="w-3 h-3" />
                                     </a>
+                                ) : (
+                                    <span className="w-full inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-400 text-sm font-semibold cursor-not-allowed">
+                                        Project Details Soon
+                                    </span>
                                 )}
                             </CardContent>
                         </Card>
