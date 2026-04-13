@@ -3,51 +3,51 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Section } from "@/components/ui/section";
-import { Github, Camera } from "lucide-react";
+import { Github } from "lucide-react";
 import Image from "next/image";
 
 const projectsData = [
     {
-        title: "Airline Reservation System",
-        description: "A complete booking system with PHP, MySQL, and a modern frontend.",
-        image: "/back.jpg",
-        tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "", snapshot: "" },
+        title: "Studium",
+        description: "A lightweight Electron desktop browser for PDF-heavy study sessions with predictable memory usage and focused study controls.",
+        image: "/projects/studium.svg",
+        tags: ["JavaScript", "HTML", "CSS"],
+        links: { github: "https://github.com/Basavaraj8143/studium" },
     },
     {
-        title: "Criminal Management System",
-        description: "A DBMS project for maintaining criminal records with role-based access.",
-        image: "/back.jpg",
-        tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "", snapshot: "" },
+        title: "AgriSense",
+        description: "An AI-powered smart farming platform with crop recommendation, pest detection, market insights, and multilingual support.",
+        image: "/projects/agrisense.png",
+        tags: ["HTML", "JavaScript", "Python"],
+        links: { github: "https://github.com/Basavaraj8143/agrisense" },
     },
     {
-        title: "NEO-LEDGER X",
-        description: "A FinTech hackathon project featuring facial recognition sign-up/login.",
-        image: "/back.jpg",
-        tags: ["React", "JavaScript", "Node.js"],
-        links: { github: "", snapshot: "" },
+        title: "Audio2Notes AI",
+        description: "Transforms lecture audio into structured study notes with transcription, cleanup, and grounded Q&A over transcripts.",
+        image: "/projects/audio2notes-ai.png",
+        tags: ["Python", "JavaScript", "HTML"],
+        links: { github: "https://github.com/Basavaraj8143/audio2notes-ai" },
     },
     {
-        title: "Email Scraper Tool",
-        description: "A hackathon tool that generates business links and scrapes contact emails.",
-        image: "/back.jpg",
-        tags: ["Python", "Flask", "Ollama", "CSV"],
-        links: { github: "", snapshot: "" },
+        title: "Distributed Storage System",
+        description: "A scalable distributed storage system with replication, heartbeat-based failure detection, and automatic re-replication.",
+        image: "/projects/distributed-storage-system.png",
+        tags: ["Java", "Distributed Systems", "Storage"],
+        links: { github: "https://github.com/Basavaraj8143/distributed-storage-system" },
     },
     {
-        title: "Fake News Detector",
-        description: "A Chrome extension using Gemini API for fake news and deepfake detection.",
-        image: "/back.jpg",
-        tags: ["JavaScript", "Chrome API", "Gemini"],
-        links: { github: "", snapshot: "" },
+        title: "Smart Flight Analytics",
+        description: "A machine learning web app that predicts flight ticket prices and provides data-driven travel analytics.",
+        image: "/projects/smart-flight-analytics.png",
+        tags: ["Jupyter Notebook", "Python", "ML"],
+        links: { github: "https://github.com/Basavaraj8143/smart-flight-analytics" },
     },
     {
-        title: "Restaurant Management System",
-        description: "A mini project to manage orders, menus, and reservations using PHP + MySQL.",
-        image: "/back.jpg",
-        tags: ["HTML", "CSS", "PHP", "MySQL"],
-        links: { github: "", snapshot: "" },
+        title: "Riskrader BGK Hackathon",
+        description: "An AI-powered fraud detection platform combining pattern matching, ML scoring, and LLM assistance for cybercrime reporting.",
+        image: "/projects/riskrader-bgk-hackathon.png",
+        tags: ["JavaScript", "Python", "FinTech"],
+        links: { github: "https://github.com/Basavaraj8143/Riskrader-BGK-Hackathon" },
     },
 ];
 
@@ -116,7 +116,7 @@ function TiltCard({ project, index }: { project: typeof projectsData[0]; index: 
                     {project.title}
                 </motion.span>
                 {/* Image */}
-                <div className="relative h-48 w-full overflow-hidden bg-gray-100">
+                <div className="relative h-40 md:h-44 w-full overflow-hidden bg-gray-100">
                     <Image
                         src={project.image}
                         alt={project.title}
@@ -127,16 +127,16 @@ function TiltCard({ project, index }: { project: typeof projectsData[0]; index: 
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-5 flex flex-col flex-grow">
                     <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
                         {project.title}
                     </h3>
 
-                    <p className="text-gray-500 mb-4 text-sm leading-relaxed flex-grow">
+                    <p className="text-gray-500 mb-4 text-sm leading-relaxed line-clamp-4">
                         {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map((tag) => (
                             <span
                                 key={tag}
@@ -147,32 +147,18 @@ function TiltCard({ project, index }: { project: typeof projectsData[0]; index: 
                         ))}
                     </div>
 
-                    <div className="flex gap-3 pt-2">
-                        {project.links.snapshot ? (
-                            <a
-                                href={project.links.snapshot}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-300 text-gray-700 text-xs font-semibold hover:bg-gray-50 transition-all"
-                            >
-                                <Camera className="w-3.5 h-3.5" /> Snapshots
-                            </a>
-                        ) : (
-                            <span className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-gray-400 text-xs font-semibold bg-gray-50 cursor-not-allowed">
-                                <Camera className="w-3.5 h-3.5" /> Preview Soon
-                            </span>
-                        )}
+                    <div className="pt-2">
                         {project.links.github ? (
                             <a
                                 href={project.links.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-xs font-semibold hover:bg-gray-700 transition-all"
+                                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-xs font-semibold hover:bg-gray-700 transition-all"
                             >
-                                <Github className="w-3.5 h-3.5" /> Code
+                                <Github className="w-3.5 h-3.5" /> View Code
                             </a>
                         ) : (
-                            <span className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-300 text-white text-xs font-semibold cursor-not-allowed">
+                            <span className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-300 text-white text-xs font-semibold cursor-not-allowed">
                                 <Github className="w-3.5 h-3.5" /> Code Soon
                             </span>
                         )}
@@ -191,7 +177,7 @@ export function Projects() {
                 <p className="text-gray-500 text-lg">A showcase of my recent work</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projectsData.map((project, index) => (
                     <TiltCard key={index} project={project} index={index} />
                 ))}
