@@ -9,29 +9,29 @@ import { siteData } from "@/lib/site-data";
 
 export function Hero() {
     return (
-        <Section id="home" className="pt-32 min-h-[95vh] flex items-center pb-16">
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-12 items-center">
+        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-16 sm:pt-20">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-center py-6 md:py-16">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-6 text-center lg:text-left order-2 lg:order-1"
+                    className="space-y-5 text-center lg:text-left order-2 lg:order-1"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-4 text-gray-900">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-3 text-gray-900">
                         Hi, I&apos;m{" "}
                         <span className="gradient-text">{siteData.shortName}</span>
                     </h1>
-                    <h2 className="text-xl md:text-2xl text-gray-600 font-medium">
+                    <h2 className="text-base sm:text-lg md:text-2xl text-gray-600 font-medium">
                         {siteData.role}
                     </h2>
-                    <p className="text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    <p className="text-base sm:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                         {siteData.bio}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
                         <Link
                             href="#projects"
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-700 transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-700 transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
                         >
                             View Projects
                         </Link>
@@ -39,7 +39,7 @@ export function Hero() {
                             href={siteData.resumePath}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm hover:-translate-y-0.5"
                         >
                             Download Resume
                         </Link>
@@ -60,7 +60,7 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="relative mx-auto order-1 lg:order-2"
                 >
-                    <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80">
+                    <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-64 md:h-64 lg:w-80 lg:h-80">
                         {/* Soft colored rings */}
                         <motion.div
                             animate={{ rotate: 360 }}
