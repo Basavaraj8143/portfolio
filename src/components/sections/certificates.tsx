@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/ui/section";
+import { ExternalLink, X } from "lucide-react";
 
 const certificatesData = [
   {
@@ -36,51 +37,107 @@ const certificatesData = [
 ];
 
 export function Certificates() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <Section id="certificates">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">Certificates</h2>
-      <p className="text-center text-gray-500 mb-12 text-lg">My professional credentials</p>
+    <Section id="certificates" className="py-12">
+      <h2 className="text-3xl md:text-4xl font-black mb-3 text-center text-foreground tracking-tight">Certificates</h2>
+      <p className="text-center text-gray-500 mb-10 text-base font-medium">My professional credentials</p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {certificatesData.map((cert, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="relative aspect-video w-full overflow-hidden bg-gray-100 border-b rounded-t-2xl">
-                <Image src={cert.image} alt={cert.title} fill className="object-cover transition-transform hover:scale-105" />
-              </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        {certificatesData.map((cert, index) => {
+            let badgeColor = "bg-[#5ce68b] text-[#111111]";
+            if (cert.badge === "Excellence") badgeColor = "bg-[#facc15] text-[#111111]";
+            if (cert.badge === "Verified") badgeColor = "bg-[#38bdf8] text-[#111111]";
 
-              <CardContent className="p-6 flex flex-1 flex-col">
-                <h3 className="text-lg font-bold mb-1 line-clamp-2 text-gray-900" title={cert.title}>
-                  {cert.title}
-                </h3>
-                <p className="text-sm font-medium text-green-600 mb-3">{cert.issuer}</p>
-
-                <p className="text-gray-500 text-sm mb-6 flex-grow line-clamp-4">{cert.description}</p>
-
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <span className="px-2.5 py-0.5 rounded-full border border-gray-200 bg-gray-50 text-gray-600 text-xs font-semibold">
-                    {cert.badge}
-                  </span>
-                  <a
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+              >
+                <div className="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl p-3 shadow-sm border-2 border-gray-100 hover:border-gray-300 hover:shadow-md transition-all duration-200 group">
+                  {/* Thumbnail Image - Clicking opens lightbox */}
+                  <div 
+                      className="relative w-14 sm:w-16 h-14 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden bg-gray-50 border border-gray-100 cursor-zoom-in"
+                      onClick={() => setSelectedImage(cert.image)}
+                      title="View Certificate Image"
+                  >
+                      <Image src={cert.image} alt={cert.title} fill className="object-cover group-hover:scale-110 transition-transform duration-300" />
+                      <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors flex items-center justify-center" />
+                  </div>
+                  
+                  {/* Content Container - Clicking goes to link */}
+                  <a 
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-gray-600 hover:text-green-600 hover:underline transition-colors flex items-center gap-1"
+                    className="flex-grow min-w-0 flex flex-col justify-center cursor-pointer"
                   >
-                    View Credential
+                    <h3 className="text-xs sm:text-sm font-black text-foreground line-clamp-2 group-hover:text-black transition-colors" title={cert.title}>
+                      {cert.title}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-1 w-full">
+                        <span className="text-[10px] sm:text-xs font-bold text-gray-400 truncate w-full sm:w-auto flex-grow">{cert.issuer}</span>
+                        <span className={`self-start sm:self-auto px-2 py-0.5 rounded-full ${badgeColor} text-[8px] sm:text-[9px] font-black uppercase tracking-wider flex-shrink-0`}>
+                            {cert.badge}
+                        </span>
+                    </div>
+                  </a>
+
+                  {/* Icon */}
+                  <a 
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:block flex-shrink-0 mr-1"
+                  >
+                    <ExternalLink className="w-4 h-4 text-gray-300 group-hover:text-black flex-shrink-0 transition-colors" />
                   </a>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+              </motion.div>
+            );
+        })}
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-8 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full bg-transparent rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center cursor-default"
+            >
+              <button 
+                 onClick={() => setSelectedImage(null)}
+                 className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 w-10 h-10 bg-black/60 hover:bg-black text-white rounded-full flex items-center justify-center transition-all hover:scale-105"
+                 title="Close"
+              >
+                  <X className="w-5 h-5" />
+              </button>
+              {/* Note: using standard img tag here prevents layout jank with unknown dimensions in a modal */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                 src={selectedImage} 
+                 alt="Certificate Overlay" 
+                 className="w-auto h-auto max-w-full max-h-[85vh] object-contain rounded-lg" 
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </Section>
   );
 }

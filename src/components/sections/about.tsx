@@ -1,41 +1,52 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { Card, CardContent } from "@/components/ui/card";
-import { Target, Heart, TrendingUp } from "lucide-react";
+import { Target, Heart, TrendingUp, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/lib/site-data";
 
 export function About() {
     return (
-        <Section id="about" className="bg-gray-50">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">About Me</h2>
-                <p className="text-lg text-gray-500 leading-relaxed">
-                    I&apos;m <strong className="text-gray-900">{siteData.shortName}</strong>, a Computer Science student passionate about problem solving,
+        <Section id="about" className="py-20 md:py-32">
+            <div className="text-center max-w-4xl mx-auto mb-20">
+                <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground tracking-tight">About Me</h2>
+                <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium">
+                    I&apos;m <strong className="text-foreground font-black">{siteData.shortName}</strong>, a Computer Science student passionate about problem solving,
                     building impactful projects, and continuously improving my skills.
                     My goal is to become a skilled software engineer and contribute to
                     real-world tech solutions.
                 </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {/* Mobile Swipe Hint */}
+            <div className="flex md:hidden justify-end px-6 mb-4 text-gray-400 items-center opacity-50">
+                <ArrowRight className="w-4 h-4 animate-pulse" />
+            </div>
+
+            {/* Container turns into horizontal scroll on mobile, grid on desktop */}
+            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 md:px-0 pb-8 md:pb-0">
                 <HighlightCard
                     icon={<Target className="w-8 h-8" />}
                     title="Focus"
                     description="Web Development, DBMS Projects, and Problem Solving"
+                    bgColor="bg-[#5ce68b]"
+                    accentHover="group-hover:opacity-80"
                     delay={0.1}
                 />
                 <HighlightCard
                     icon={<Heart className="w-8 h-8" />}
                     title="Interests"
                     description="AI Tools, Full-Stack Projects, Hackathons"
+                    bgColor="bg-[#38bdf8]"
+                    accentHover="group-hover:opacity-80"
                     delay={0.2}
                 />
                 <HighlightCard
                     icon={<TrendingUp className="w-8 h-8" />}
                     title="Goal"
                     description="Securing a good job and growing in tech industry"
+                    bgColor="bg-[#facc15]"
+                    accentHover="group-hover:opacity-80"
                     delay={0.3}
                 />
             </div>
@@ -43,23 +54,35 @@ export function About() {
     );
 }
 
-function HighlightCard({ icon, title, description, delay }: { icon: React.ReactNode; title: string; description: string; delay: number }) {
+interface HighlightCardProps {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    bgColor: string;
+    accentHover: string;
+    delay: number;
+}
+
+function HighlightCard({ icon, title, description, bgColor, accentHover, delay }: HighlightCardProps) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
+            className="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center"
         >
-            <Card className="h-full text-center max-w-[280px] mx-auto">
-                <CardContent className="pt-6 flex flex-col items-center gap-4">
-                    <div className="p-3 rounded-full bg-green-50 text-green-600 mb-2">
-                        {icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-                    <p className="text-gray-500">{description}</p>
-                </CardContent>
-            </Card>
+            <div className="h-full bg-white rounded-[2rem] p-8 md:p-10 text-center flex flex-col items-center shadow-sm border-2 border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group cursor-default">
+                <div className={`p-5 rounded-full ${bgColor} text-[#111111] mb-6 shadow-md transition-opacity ${accentHover}`}>
+                    {icon}
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight transition-colors">
+                    {title}
+                </h3>
+                <p className="text-gray-500 font-medium leading-relaxed">
+                    {description}
+                </p>
+            </div>
         </motion.div>
     );
 }

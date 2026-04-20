@@ -59,17 +59,18 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white lg:bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm py-3"
-          : "bg-white lg:bg-transparent border-b border-gray-200 shadow-sm py-3 lg:border-none lg:shadow-none lg:backdrop-blur-none lg:py-4"
+          ? "bg-white backdrop-blur-md border-b border-gray-100 shadow-sm py-3"
+          : "bg-white md:bg-transparent border-b border-gray-100 shadow-sm md:border-none md:shadow-none md:backdrop-blur-none py-3 md:py-5"
       )}
     >
       <CustomCursor containerRef={navRef} />
       <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
-        <Link href="#home" className="text-xl font-bold tracking-tight text-gray-900">
+        <Link href="#home" className="text-xl md:text-2xl font-black tracking-tighter text-foreground hover:scale-105 transition-transform duration-300">
           {siteData.shortName}
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-8 bg-white px-6 py-2.5 rounded-full border border-gray-100 shadow-sm">
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -77,15 +78,15 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors relative group",
-                  isActive ? "text-gray-900" : "text-gray-500 hover:text-gray-900"
+                  "text-sm font-bold transition-all relative group",
+                  isActive ? "text-foreground" : "text-gray-500 hover:text-foreground"
                 )}
               >
                 {item.name}
                 <span
                   className={cn(
-                    "absolute -bottom-0.5 left-0 h-0.5 bg-gradient-to-r from-green-500 to-teal-500 rounded-full transition-all duration-300",
-                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                    "absolute -bottom-1 left-1/2 -translate-x-1/2 h-1 bg-[#5ce68b] rounded-t-lg transition-all duration-300",
+                    isActive ? "w-1/2" : "w-0 group-hover:w-1/2"
                   )}
                 />
               </Link>
@@ -93,27 +94,36 @@ export function Navbar() {
           })}
         </nav>
 
+        {/* Mobile Toggle Button */}
         <button
           suppressHydrationWarning
-          className="lg:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
+          className="lg:hidden p-2 text-foreground active:scale-95 transition-transform"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-6 w-6 stroke-[3]" /> : <Menu className="h-6 w-6 stroke-[3]" />}
         </button>
       </div>
 
+      {/* Mobile Nav Overlay */}
       {isOpen && (
         <>
-          <div className="fixed inset-0 bg-black/20 z-40 lg:hidden" onClick={() => setIsOpen(false)} />
-          <div className="fixed inset-y-0 right-0 w-3/4 bg-white z-50 shadow-2xl lg:hidden border-l border-gray-100">
-            <div className="flex justify-between items-center p-5 border-b border-gray-100">
-              <span className="text-gray-900 text-lg font-semibold">{siteData.shortName}</span>
-              <button onClick={() => setIsOpen(false)} className="text-gray-600 hover:text-gray-900">
-                <X className="h-6 w-6" />
+          <div 
+             className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden" 
+             onClick={() => setIsOpen(false)} 
+          />
+          <div className="fixed inset-y-0 right-0 w-[80vw] max-w-sm bg-white z-50 shadow-2xl lg:hidden flex flex-col transition-transform duration-300">
+            <div className="flex justify-between items-center p-6 border-b border-gray-100">
+              <span className="text-foreground text-2xl font-black tracking-tighter">{siteData.shortName}</span>
+              <button 
+                  onClick={() => setIsOpen(false)} 
+                  className="p-2 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="Close menu"
+              >
+                <X className="h-5 w-5 text-foreground stroke-[3]" />
               </button>
             </div>
-            <nav className="flex flex-col p-5 gap-1">
+            <nav className="flex flex-col p-6 gap-2 overflow-y-auto">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -121,8 +131,10 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "text-base font-medium rounded-lg px-4 py-3 transition-colors",
-                      isActive ? "bg-green-50 text-green-700 font-semibold" : "text-gray-700 hover:bg-gray-50"
+                      "text-lg font-black tracking-tight rounded-xl px-5 py-4 transition-all duration-300",
+                      isActive 
+                        ? "bg-[#111111] text-white shadow-lg shadow-black/10 translate-x-2" 
+                        : "text-gray-500 hover:text-foreground hover:bg-gray-50 hover:translate-x-1"
                     )}
                     onClick={() => setIsOpen(false)}
                   >

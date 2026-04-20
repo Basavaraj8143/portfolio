@@ -4,87 +4,77 @@ import { Section } from "@/components/ui/section";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, ArrowRight } from "lucide-react";
 import { siteData } from "@/lib/site-data";
 
 export function Hero() {
     return (
-        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-16 sm:pt-20">
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-8 md:gap-12 items-center py-6 md:py-16">
+        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-8 sm:pt-20 pb-4">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-4 sm:gap-8 md:gap-12 items-center py-2 md:py-16">
+                
+                {/* --- Text Content --- */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="space-y-5 text-center lg:text-left order-2 lg:order-1"
+                    className="space-y-2 sm:space-y-5 text-center lg:text-left order-2 lg:order-1"
                 >
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-3 text-gray-900">
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight leading-[1.05] sm:leading-tight mb-1 sm:mb-4 text-foreground">
                         Hi, I&apos;m{" "}
-                        <span className="gradient-text">{siteData.shortName}</span>
+                        <span className="text-foreground">{siteData.shortName}</span>
                     </h1>
-                    <h2 className="text-base sm:text-lg md:text-2xl text-gray-600 font-medium">
+                    <h2 className="text-lg sm:text-2xl md:text-3xl text-gray-600 font-semibold mb-2 sm:mb-6">
                         {siteData.role}
                     </h2>
-                    <p className="text-base sm:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                    <p className="text-sm sm:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 leading-snug sm:leading-relaxed mb-2 sm:mb-0">
                         {siteData.bio}
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-2">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1 sm:pt-2">
                         <Link
                             href="#projects"
-                            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-700 transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-[#5ce68b] text-[#111111] text-sm sm:text-base font-black tracking-wide hover:bg-[#111111] hover:text-white transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
                         >
-                            View Projects
+                            View Projects <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                         </Link>
                         <Link
                             href={siteData.resumePath}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-gray-700 text-sm font-semibold bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 rounded-full border-2 border-gray-200 text-foreground text-sm sm:text-base font-black tracking-wide bg-transparent hover:border-gray-300 hover:bg-gray-50 transition-all duration-200 shadow-sm hover:-translate-y-1"
                         >
                             Download Resume
                         </Link>
                     </div>
 
-                    <div className="flex gap-3 justify-center lg:justify-start pt-2">
-                        <SocialLink href={siteData.social.github} icon={<Github />} label="GitHub" />
-                        <SocialLink href={siteData.social.linkedin} icon={<Linkedin />} label="LinkedIn" />
+                    <div className="flex gap-3 justify-center lg:justify-start pt-2 sm:pt-4">
+                        <SocialLink href={siteData.social.github} icon={<Github className="w-4 h-4 sm:w-5 sm:h-5"/>} label="GitHub" />
+                        <SocialLink href={siteData.social.linkedin} icon={<Linkedin className="w-4 h-4 sm:w-5 sm:h-5"/>} label="LinkedIn" />
                         {siteData.social.twitter ? (
-                            <SocialLink href={siteData.social.twitter} icon={<Twitter />} label="Twitter" />
+                            <SocialLink href={siteData.social.twitter} icon={<Twitter className="w-4 h-4 sm:w-5 sm:h-5"/>} label="Twitter" />
                         ) : null}
                     </div>
                 </motion.div>
 
+                {/* --- Photo --- */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="relative mx-auto order-1 lg:order-2"
+                    className="relative mx-auto order-1 lg:order-2 mt-4 sm:mt-0"
                 >
-                    <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-64 md:h-64 lg:w-80 lg:h-80">
-                        {/* Soft colored rings */}
-                        <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-                            className="absolute inset-0 rounded-full border-2 border-green-200 scale-110"
-                        />
-                        <motion.div
-                            animate={{ rotate: -360 }}
-                            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-                            className="absolute inset-0 rounded-full border-2 border-teal-200 scale-125"
-                        />
-
-                        <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white shadow-2xl z-10">
+                    {/* Increased mobile size to balance screen real estate */}
+                    <div className="relative w-44 h-56 sm:w-56 sm:h-72 md:w-64 md:h-[340px] lg:w-[300px] lg:h-[380px] group mx-auto lg:ml-auto lg:mr-0">
+                        {/* Simple static photo frame without hover translations */}
+                        <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-white border-4 border-white shadow-xl z-10">
                             <Image
                                 src="/img.jpg"
                                 alt={siteData.name}
                                 fill
-                                className="object-cover transition-transform hover:scale-110 duration-500"
+                                className="object-cover scale-[1.25] object-center"
                                 priority
                             />
                         </div>
-
-                        {/* Subtle green glow */}
-                        <div className="absolute inset-0 bg-green-100 blur-3xl -z-10 rounded-full scale-150 opacity-60" />
                     </div>
                 </motion.div>
             </div>
@@ -98,7 +88,7 @@ function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full border border-gray-200 bg-white text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
+            className="p-2 sm:p-3 rounded-full border border-gray-200 bg-white text-gray-600 hover:text-gray-900 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
             aria-label={label}
         >
             {icon}
