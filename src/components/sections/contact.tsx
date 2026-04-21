@@ -62,27 +62,27 @@ export function Contact() {
 
     return (
         <Section id="contact" className="py-12 md:py-32 relative overflow-hidden bg-[#fdfbf7]">
-            
+
             {/* --- Interactive Floating Graphics (Parallax) --- */}
             {/* Top Left Yellow Star */}
-            <motion.div 
+            <motion.div
                 style={{ x: x1, y: y1 }}
                 className="absolute top-[2%] left-[2%] md:top-[10%] md:left-[15%] opacity-60 md:opacity-80 scale-75 md:scale-100"
             >
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 2L20 12" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M20 28L20 38" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M38 20L28 20" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M12 20L2 20" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M32.7279 7.27214L25.6568 14.3432" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M14.3432 25.6568L7.27214 32.7279" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M32.7279 32.7279L25.6568 25.6568" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
-                    <path d="M14.3432 14.3432L7.27214 7.27213" stroke="#facc15" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M20 2L20 12" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M20 28L20 38" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M38 20L28 20" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M12 20L2 20" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M32.7279 7.27214L25.6568 14.3432" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M14.3432 25.6568L7.27214 32.7279" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M32.7279 32.7279L25.6568 25.6568" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                    <path d="M14.3432 14.3432L7.27214 7.27213" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
                 </svg>
             </motion.div>
 
             {/* Middle Left Green Swirl */}
-            <motion.div 
+            <motion.div
                 style={{ x: x2, y: y2 }}
                 className="absolute top-[12%] left-[-5%] md:top-[30%] md:left-[10%] opacity-50 md:opacity-90 scale-50 md:scale-100"
             >
@@ -93,7 +93,7 @@ export function Contact() {
             </motion.div>
 
             {/* Top Right Purple Squiggle */}
-            <motion.div 
+            <motion.div
                 style={{ x: x3, y: y3 }}
                 className="absolute top-[6%] right-[-2%] md:top-[15%] md:right-[15%] opacity-50 md:opacity-70 scale-75 md:scale-100"
             >
@@ -105,23 +105,23 @@ export function Contact() {
             </motion.div>
 
             {/* --- Main Content --- */}
-            
+
             <div className="max-w-6xl mx-auto relative z-10 px-3 sm:px-6">
-                
+
                 {/* Minimalist CTA Header */}
                 <div className="flex flex-col items-center justify-center text-center mb-20 md:mb-28">
-                    <motion.h2 
+                    <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-foreground tracking-tighter mb-4 md:mb-6 leading-[1.1]"
                     >
-                        Ready to shape the <br className="hidden sm:block" />
-                        <span className="italic font-serif font-medium text-gray-800"> future of tech?</span>
+                        Let&apos;s build something <br className="hidden sm:block" />
+                        <span className="italic font-serif font-medium text-gray-800"> amazing together.</span>
                     </motion.h2>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -134,9 +134,9 @@ export function Contact() {
 
                 {/* Form & Info Layout */}
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 w-full">
-                    
+
                     {/* Left: Info */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -169,14 +169,14 @@ export function Contact() {
                         </div>
 
                         <div className="grid gap-4 bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-gray-100">
-                            <ContactItem icon={<Mail className="w-5 h-5"/>} label="Email" value={siteData.email} color="bg-[#38bdf8]" />
-                            <ContactItem icon={<Phone className="w-5 h-5"/>} label="Phone" value={siteData.phone} color="bg-[#5ce68b]" />
-                            <ContactItem icon={<MapPin className="w-5 h-5"/>} label="Location" value={siteData.location} color="bg-[#facc15]" />
+                            <ContactItem icon={<Mail className="w-5 h-5" />} label="Email" value={siteData.email} color="bg-[#38bdf8]" />
+                            <ContactItem icon={<Phone className="w-5 h-5" />} label="Phone" value={siteData.phone} color="bg-[#5ce68b]" />
+                            <ContactItem icon={<MapPin className="w-5 h-5" />} label="Location" value={siteData.location} color="bg-[#facc15]" />
                         </div>
                     </motion.div>
 
                     {/* Right: Form */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -235,10 +235,10 @@ export function Contact() {
                                 />
                             </div>
 
-                            <button 
-                                type="submit" 
-                                disabled={status === "submitting"} 
-                                suppressHydrationWarning 
+                            <button
+                                type="submit"
+                                disabled={status === "submitting"}
+                                suppressHydrationWarning
                                 className="w-full inline-flex items-center justify-center gap-2 mt-4 px-8 py-4 rounded-xl bg-[#111111] hover:bg-[#5ce68b] text-white hover:text-[#111111] text-sm font-black uppercase tracking-widest transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
                             >
                                 {status === "submitting" ? (

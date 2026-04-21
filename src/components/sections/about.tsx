@@ -1,11 +1,39 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import { Section } from "@/components/ui/section";
 import { Target, Heart, TrendingUp, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/lib/site-data";
 
 export function About() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        if (isPaused) return;
+        
+        const interval = setInterval(() => {
+            if (scrollRef.current) {
+                const el = scrollRef.current;
+                const maxScrollLeft = el.scrollWidth - el.clientWidth;
+                
+                // Only act if there is overflow (mobile horizontal scroll)
+                if (maxScrollLeft > 0) {
+                    if (el.scrollLeft >= maxScrollLeft - 10) {
+                        // Reached the end, smooth scroll all the way back to 0
+                        el.scrollTo({ left: 0, behavior: "smooth" });
+                    } else {
+                        // Move right one card roughly
+                        el.scrollBy({ left: window.innerWidth * 0.85, behavior: "smooth" });
+                    }
+                }
+            }
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [isPaused]);
+
     return (
         <Section id="about" className="py-20 md:py-32">
             <div className="text-center max-w-4xl mx-auto mb-20">
@@ -24,7 +52,14 @@ export function About() {
             </div>
 
             {/* Container turns into horizontal scroll on mobile, grid on desktop */}
-            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 md:px-0 pb-8 md:pb-0">
+            <div 
+                ref={scrollRef}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onTouchStart={() => setIsPaused(true)}
+                onTouchEnd={() => setIsPaused(false)}
+                className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 md:px-0 pb-8 md:pb-0"
+            >
                 <HighlightCard
                     icon={<Target className="w-8 h-8" />}
                     title="Focus"

@@ -6,6 +6,7 @@ import { Education } from "@/components/sections/education";
 import { Skills } from "@/components/sections/skills";
 import { TechLogoLoop } from "@/components/sections/tech-logo-loop";
 import { Projects } from "@/components/sections/projects";
+import { OpenSource } from "@/components/sections/open-source";
 import { Hackathons } from "@/components/sections/hackathons";
 import { Certificates } from "@/components/sections/certificates";
 import { Contact } from "@/components/sections/contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <Skills />
       <TechLogoLoop />
       <Projects />
+      <OpenSource />
       <Hackathons />
       <Certificates />
       <Contact />

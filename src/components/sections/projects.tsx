@@ -36,18 +36,19 @@ const projectsData = [
         links: { github: "https://github.com/Basavaraj8143/distributed-storage-system" },
     },
     {
-        title: "Smart Flight Analytics",
-        description: "A machine learning web app that predicts flight ticket prices and provides data-driven travel analytics.",
-        image: "/projects/smart-flight-analytics.png",
-        tags: ["Jupyter Notebook", "Python", "ML"],
-        links: { github: "https://github.com/Basavaraj8143/smart-flight-analytics" },
-    },
-    {
         title: "Riskrader BGK Hackathon",
         description: "An AI-powered fraud detection platform combining pattern matching, ML scoring, and LLM assistance for cybercrime reporting.",
         image: "/projects/riskrader-bgk-hackathon.png",
         tags: ["JavaScript", "Python", "FinTech"],
         links: { github: "https://github.com/Basavaraj8143/Riskrader-BGK-Hackathon" },
+    },
+    {
+        title: "More on GitHub",
+        description: "I have many more highly impactful projects, technical experiments, and open-source contributions on my GitHub profile. Kindly visit to explore!",
+        image: "",
+        tags: [],
+        links: { github: "https://github.com/Basavaraj8143" },
+        isCta: true,
     },
 ];
 
@@ -182,6 +183,41 @@ function TiltCard({ project, index }: { project: typeof projectsData[0]; index: 
     );
 }
 
+function CtaCard({ project }: { project: typeof projectsData[0] }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="w-[85vw] sm:w-[50vw] md:w-auto h-full flex-shrink-0 snap-center md:snap-align-none"
+        >
+            <div className="h-full bg-white rounded-[2rem] p-8 flex flex-col shadow-md border-2 border-gray-100 justify-center items-center text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#f9fafb] group-hover:bg-[#111111] transition-colors duration-500 z-0"/>
+                <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-200">
+                        <Github className="w-8 h-8 text-[#111111]" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-white transition-colors tracking-tight">
+                        {project.title}
+                    </h3>
+                    <p className="text-gray-500 mb-8 group-hover:text-gray-300 transition-colors font-medium leading-relaxed">
+                        {project.description}
+                    </p>
+                    <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#111111] text-white text-sm font-black uppercase tracking-widest group-hover:bg-[#5ce68b] group-hover:text-[#111111] transition-all shadow-sm"
+                    >
+                        Visit GitHub <Github className="w-4 h-4 ml-1" />
+                    </a>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
+
 export function Projects() {
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -204,9 +240,12 @@ export function Projects() {
                 ref={scrollRef}
                 className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4 md:px-0 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory hide-scrollbar pb-6 md:pb-0"
             >
-                {projectsData.map((project, index) => (
-                    <TiltCard key={index} project={project} index={index} />
-                ))}
+                {projectsData.map((project, index) => {
+                    if (project.isCta) {
+                        return <CtaCard key={index} project={project} />;
+                    }
+                    return <TiltCard key={index} project={project} index={index} />;
+                })}
             </div>
 
             {/* Mobile Navigation Arrows (Below Carousel) */}

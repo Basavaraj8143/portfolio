@@ -1,16 +1,81 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Github, Linkedin, Twitter, ArrowRight } from "lucide-react";
 import { siteData } from "@/lib/site-data";
 
 export function Hero() {
+    // Parallax mouse tracking
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseX.set((e.clientX / window.innerWidth - 0.5) * 2);
+            mouseY.set((e.clientY / window.innerHeight - 0.5) * 2);
+        };
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, [mouseX, mouseY]);
+
+    // Transformation layers
+    const x1 = useTransform(mouseX, [-1, 1], [-30, 30]);
+    const y1 = useTransform(mouseY, [-1, 1], [-30, 30]);
+    const x2 = useTransform(mouseX, [-1, 1], [40, -40]);
+    const y2 = useTransform(mouseY, [-1, 1], [40, -40]);
+    const x3 = useTransform(mouseX, [-1, 1], [-20, 20]);
+    const y3 = useTransform(mouseY, [-1, 1], [20, -20]);
+
     return (
-        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-8 sm:pt-20 pb-4">
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-4 sm:gap-8 md:gap-12 items-center py-2 md:py-16">
+        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-8 sm:pt-20 pb-4 relative overflow-hidden">
+            
+            {/* --- Interactive Floating Graphics (Parallax) --- */}
+            
+            {/* Top Right Orange Star */}
+            <motion.div 
+                style={{ x: x1, y: y1 }}
+                className="absolute top-[10%] right-[10%] md:top-[15%] md:right-[20%] opacity-60 md:opacity-80 scale-75 md:scale-100 z-0 pointer-events-none"
+            >
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 2L20 12" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M20 28L20 38" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M38 20L28 20" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M12 20L2 20" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M32.7279 7.27214L25.6568 14.3432" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M14.3432 25.6568L7.27214 32.7279" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M32.7279 32.7279L25.6568 25.6568" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M14.3432 14.3432L7.27214 7.27213" stroke="#fb923c" strokeWidth="3" strokeLinecap="round"/>
+                </svg>
+            </motion.div>
+
+            {/* Bottom Left Blue Swirl */}
+            <motion.div 
+                style={{ x: x2, y: y2 }}
+                className="absolute bottom-[20%] left-[-2%] md:bottom-[15%] md:left-[5%] opacity-50 md:opacity-90 scale-50 md:scale-100 z-0 pointer-events-none"
+            >
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="scale-x-[-1]">
+                    <path d="M20 80 C 20 20, 80 20, 80 40" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" fill="none" />
+                    <path d="M70 30 L 80 40 L 90 30" stroke="#38bdf8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </svg>
+            </motion.div>
+
+            {/* Top Left Yellow Squiggle */}
+            <motion.div 
+                style={{ x: x3, y: y3 }}
+                className="absolute top-[25%] left-[5%] md:top-[30%] md:left-[8%] opacity-50 md:opacity-70 scale-75 md:scale-100 z-0 pointer-events-none"
+            >
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 50 Q 30 10 50 50 T 90 50" stroke="#facc15" strokeWidth="3" strokeLinecap="round" fill="none" />
+                    <circle cx="90" cy="50" r="3" fill="#facc15" />
+                    <path d="M8 48 L 12 52 M 8 52 L 12 48" stroke="#facc15" strokeWidth="3" strokeLinecap="round" />
+                </svg>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-4 sm:gap-8 md:gap-12 items-center py-2 md:py-16 relative z-10 w-full">
                 
                 {/* --- Text Content --- */}
                 <motion.div
