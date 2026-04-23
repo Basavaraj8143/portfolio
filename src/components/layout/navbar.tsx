@@ -54,7 +54,8 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
+    <>
+      <header
       ref={navRef}
       data-no-splash
       className={cn(
@@ -105,15 +106,16 @@ export function Navbar() {
           {isOpen ? <X className="h-6 w-6 stroke-[3]" /> : <Menu className="h-6 w-6 stroke-[3]" />}
         </button>
       </div>
+    </header>
 
-      {/* Mobile Nav Overlay */}
+    {/* Mobile Nav Overlay - Moved outside <header> to prevent backdrop-blur clipping bugs */}
       {isOpen && (
-        <>
+        <div className="lg:hidden fixed inset-0 z-[100]">
           <div 
-             className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden" 
+             className="absolute inset-0 bg-black/40 backdrop-blur-sm" 
              onClick={() => setIsOpen(false)} 
           />
-          <div className="fixed inset-y-0 right-0 w-[80vw] max-w-sm bg-white z-50 shadow-2xl lg:hidden flex flex-col transition-transform duration-300">
+          <div className="absolute inset-y-0 right-0 w-[80vw] max-w-sm bg-white shadow-2xl flex flex-col transform transition-transform duration-300">
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
               <span className="text-foreground text-2xl font-black tracking-tighter">{siteData.shortName}</span>
               <button 
@@ -132,21 +134,22 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "text-lg font-black tracking-tight rounded-xl px-5 py-4 transition-all duration-300",
+                      "text-base md:text-lg font-black tracking-tight rounded-xl px-5 py-4 transition-all duration-300 flex items-center justify-between",
                       isActive 
                         ? "bg-[#111111] text-white shadow-lg shadow-black/10 translate-x-2" 
                         : "text-gray-500 hover:text-foreground hover:bg-gray-50 hover:translate-x-1"
                     )}
                     onClick={() => setIsOpen(false)}
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    {isActive && <div className="w-2 h-2 rounded-full bg-[#5ce68b]" />}
                   </Link>
                 );
               })}
             </nav>
           </div>
-        </>
+        </div>
       )}
-    </header>
+    </>
   );
 }
