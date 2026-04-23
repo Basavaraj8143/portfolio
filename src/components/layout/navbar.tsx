@@ -60,8 +60,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white backdrop-blur-md border-b border-gray-100 shadow-sm py-3"
-          : "bg-white md:bg-transparent border-b border-gray-100 shadow-sm md:border-none md:shadow-none md:backdrop-blur-none py-3 md:py-5"
+          ? "bg-white/80 backdrop-blur-md py-3"
+          : "bg-white md:bg-transparent py-3 md:py-5"
       )}
     >
       <CustomCursor containerRef={navRef} />
