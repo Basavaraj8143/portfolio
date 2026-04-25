@@ -2,7 +2,7 @@
 
 A highly interactive, premium personal portfolio built with a mobile-first design philosophy. Inspired by modern "Mindrift" aesthetics, this portfolio features dynamic Framer Motion animations, horizontal snap-scrolling, edge-to-edge typography, and interactive parallax graphics.
 
-## 🛠️ Built With..
+## 🛠️ Built With.
 
 <p>
   <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next JS">
