@@ -1,7 +1,7 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,6 @@ export function Hero() {
     // Parallax mouse tracking
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
-    const shouldReduceMotion = useReducedMotion();
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -32,7 +31,7 @@ export function Hero() {
     const y3 = useTransform(mouseY, [-1, 1], [20, -20]);
 
     return (
-        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-8 sm:pt-20 pb-4 relative overflow-hidden">
+        <Section id="home" noPadding className="min-h-[calc(100vh-4rem)] flex items-center pt-6 sm:pt-20 pb-6 sm:pb-4 relative overflow-hidden">
             
             {/* --- Interactive Floating Graphics (Parallax) --- */}
             
@@ -76,7 +75,7 @@ export function Hero() {
                 </svg>
             </motion.div>
 
-            <div className="grid lg:grid-cols-[3fr_2fr] gap-4 sm:gap-8 md:gap-12 items-center py-2 md:py-16 relative z-10 w-full">
+            <div className="grid lg:grid-cols-[3fr_2fr] gap-3 sm:gap-8 md:gap-12 items-center py-2 md:py-16 relative z-10 w-full">
                 
                 {/* --- Text Content --- */}
                 <motion.div
@@ -86,16 +85,12 @@ export function Hero() {
                     className="space-y-2 sm:space-y-5 text-center lg:text-left order-2 lg:order-1"
                 >
                     <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight leading-[1.05] sm:leading-tight mb-1 sm:mb-4 text-foreground">
-                        Hi, I&apos;m{" "}
+                        Hii, I&apos;m{" "}
                         <span className="text-foreground">{siteData.shortName}</span>
                     </h1>
                     <h2 className="text-lg sm:text-2xl md:text-3xl text-gray-600 font-semibold mb-2 sm:mb-6">
                         {siteData.role}
                     </h2>
-                    <p className="text-sm sm:text-lg text-gray-500 max-w-lg mx-auto lg:mx-0 leading-snug sm:leading-relaxed mb-2 sm:mb-0">
-                        {siteData.bio}
-                    </p>
-
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-1 sm:pt-2">
                         <Link
                             href="#projects"
@@ -127,27 +122,17 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="relative mx-auto order-1 lg:order-2 mt-4 sm:mt-0"
+                    className="relative mx-auto order-1 lg:order-2 mt-2 sm:mt-0"
                 >
                     {/* Increased mobile size to balance screen real estate */}
                     <div className="relative w-44 h-56 sm:w-56 sm:h-72 md:w-64 md:h-[340px] lg:w-[300px] lg:h-[380px] group mx-auto lg:ml-auto lg:mr-0">
-                        <motion.div
-                            className="absolute -inset-3 rounded-full border-2 border-dashed border-[#5ce68b]/55 z-0"
-                            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
-                            transition={shouldReduceMotion ? undefined : { duration: 20, repeat: Infinity, ease: "linear" }}
-                        />
-                        <motion.div
-                            className="absolute -inset-6 rounded-full border border-[#38bdf8]/35 z-0"
-                            animate={shouldReduceMotion ? undefined : { scale: [1, 1.03, 1], opacity: [0.3, 0.6, 0.3] }}
-                            transition={shouldReduceMotion ? undefined : { duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        />
                         {/* Simple static photo frame without hover translations */}
                         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-white border-4 border-white shadow-xl z-10">
                             <Image
                                 src="/newimg.png"
                                 alt={siteData.name}
                                 fill
-                                className="object-cover scale-[1.25] object-center"
+                                className="object-cover scale-[1.25] object-[center_42%]"
                                 priority
                             />
                         </div>

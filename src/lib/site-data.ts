@@ -2,7 +2,7 @@ export const siteData = {
   name: "Basavaraj Ningasani",
   shortName: "Basavaraj",
   title: "Basavaraj Ningasani | Portfolio",
-  role: "CSE Student | Aspiring Software Engineer",
+  role: "CSE Student building backend-focused full-stack applications",
   bio: "I love building practical projects, learning daily, and solving real-world problems with software.",
   summary:
     "Computer Science student passionate about problem solving, full-stack development, and building impactful products.",
