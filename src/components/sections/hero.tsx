@@ -1,7 +1,7 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,7 @@ export function Hero() {
     // Parallax mouse tracking
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
+    const shouldReduceMotion = useReducedMotion();
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -130,10 +131,20 @@ export function Hero() {
                 >
                     {/* Increased mobile size to balance screen real estate */}
                     <div className="relative w-44 h-56 sm:w-56 sm:h-72 md:w-64 md:h-[340px] lg:w-[300px] lg:h-[380px] group mx-auto lg:ml-auto lg:mr-0">
+                        <motion.div
+                            className="absolute -inset-3 rounded-full border-2 border-dashed border-[#5ce68b]/55 z-0"
+                            animate={shouldReduceMotion ? undefined : { rotate: 360 }}
+                            transition={shouldReduceMotion ? undefined : { duration: 20, repeat: Infinity, ease: "linear" }}
+                        />
+                        <motion.div
+                            className="absolute -inset-6 rounded-full border border-[#38bdf8]/35 z-0"
+                            animate={shouldReduceMotion ? undefined : { scale: [1, 1.03, 1], opacity: [0.3, 0.6, 0.3] }}
+                            transition={shouldReduceMotion ? undefined : { duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        />
                         {/* Simple static photo frame without hover translations */}
                         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-white border-4 border-white shadow-xl z-10">
                             <Image
-                                src="/img.jpg"
+                                src="/newimg.png"
                                 alt={siteData.name}
                                 fill
                                 className="object-cover scale-[1.25] object-center"
