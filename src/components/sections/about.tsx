@@ -63,7 +63,7 @@ export function About() {
                 <HighlightCard
                     icon={<Target className="w-8 h-8" />}
                     title="Focus"
-                    description="Web Development, DBMS Projects, and Problem Solving"
+                    description="Backend Engineering, Distributed Systems, Scalable APIs, and Database Design"
                     bgColor="bg-[#5ce68b]"
                     accentHover="group-hover:opacity-80"
                     delay={0.1}
@@ -71,7 +71,7 @@ export function About() {
                 <HighlightCard
                     icon={<Heart className="w-8 h-8" />}
                     title="Interests"
-                    description="AI Tools, Full-Stack Projects, Hackathons"
+                    description="Open Source, System Architecture, Full-Stack Development, and Hackathons"
                     bgColor="bg-[#38bdf8]"
                     accentHover="group-hover:opacity-80"
                     delay={0.2}
@@ -79,7 +79,7 @@ export function About() {
                 <HighlightCard
                     icon={<TrendingUp className="w-8 h-8" />}
                     title="Goal"
-                    description="Securing a good job and growing in tech industry"
+                    description="Designing scalable systems and solving real-world engineering problems"
                     bgColor="bg-[#facc15]"
                     accentHover="group-hover:opacity-80"
                     delay={0.3}
