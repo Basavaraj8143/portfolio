@@ -44,3 +44,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## ☁️ Deployment
 
 This project is fully optimized and ready to be deployed on **Vercel** with zero-configuration required. Simply link the GitHub repository and execute deployment.
+I do contribute 
