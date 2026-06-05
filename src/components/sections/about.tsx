@@ -29,7 +29,7 @@ export function About() {
                     }
                 }
             }
-        }, 3000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, [isPaused]);
@@ -107,14 +107,14 @@ function HighlightCard({ icon, title, description, bgColor, accentHover, delay }
             transition={{ duration: 0.5, delay }}
             className="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center"
         >
-            <div className="h-full bg-white rounded-[2rem] p-8 md:p-10 text-center flex flex-col items-center shadow-sm border-2 border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group cursor-default">
+            <div className="h-full bg-card rounded-[2rem] p-8 md:p-10 text-center flex flex-col items-center shadow-sm border-2 border-border hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group cursor-default">
                 <div className={`p-5 rounded-full ${bgColor} text-[#111111] mb-6 shadow-md transition-opacity ${accentHover}`}>
                     {icon}
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight transition-colors">
                     {title}
                 </h3>
-                <p className="text-gray-500 font-medium leading-relaxed">
+                <p className="text-muted-foreground font-medium leading-relaxed">
                     {description}
                 </p>
             </div>

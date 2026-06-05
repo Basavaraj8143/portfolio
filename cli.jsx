@@ -106,16 +106,34 @@ export const portfolioData = {
 
   hackathons: [
     {
+      title: "Vibe-A-Thon",
+      role: "App Developer",
+      badge: "Recognition",
+      link: "https://github.com/Basavaraj8143/vibe_a_thon.git"
+    },
+    {
+      title: "WAVE Hackathon 3.0",
+      role: "AI/ML Developer",
+      badge: "Top 12 Finalist",
+      link: "https://github.com/Basavaraj8143/Riskrader-BGK-Hackathon"
+    },
+    {
+      title: "Hackkshetra 2.0",
+      role: "Team Leader",
+      badge: "🏅 Finalist",
+      link: "https://github.com/Basavaraj8143/agrisense"
+    },
+    {
+      title: "HackFusion 2.0",
+      role: "Backend Developer",
+      badge: "Participant",
+      link: "https://github.com/Basavaraj8143/rbac-firewall.git"
+    },
+    {
       title: "Insignia Hackathon 2025",
       role: "Team Leader",
       badge: "Recognition",
       link: "https://github.com/Basavaraj8143/INS-CSE-37-10277.git"
-    },
-    {
-      title: "CodeStorm Hackathon",
-      role: "Backend Developer",
-      badge: "Winner",
-      link: null
     },
     {
       title: "Hyperthon 2025",
