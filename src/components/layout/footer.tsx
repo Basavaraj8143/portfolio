@@ -1,4 +1,5 @@
 import { siteData } from "@/lib/site-data";
+import { ViewCount } from "@/components/layout/view-count";
 
 export function Footer() {
   return (
@@ -15,6 +16,10 @@ export function Footer() {
           <span className="px-4 py-1.5 rounded-full border border-gray-200 bg-white text-sm font-medium text-gray-700">
             Available Now
           </span>
+        </div>
+
+        <div className="mb-6 flex justify-center">
+          <ViewCount />
         </div>
 
         <p className="text-sm text-gray-400">
