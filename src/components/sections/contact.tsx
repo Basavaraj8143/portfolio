@@ -192,7 +192,7 @@ export function Contact() {
                                     name="name"
                                     required
                                     className="flex h-12 w-full rounded-xl border-2 border-gray-100 bg-gray-50 px-4 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#5ce68b] focus:border-transparent focus:bg-white transition-all font-medium"
-                                    placeholder="John Doe"
+                                    placeholder="Rajesh Kumar"
                                     suppressHydrationWarning
                                 />
                             </div>
@@ -205,7 +205,7 @@ export function Contact() {
                                     type="email"
                                     required
                                     className="flex h-12 w-full rounded-xl border-2 border-gray-100 bg-gray-50 px-4 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#5ce68b] focus:border-transparent focus:bg-white transition-all font-medium"
-                                    placeholder="john@example.com"
+                                    placeholder="rajesh@example.com"
                                     suppressHydrationWarning
                                 />
                             </div>
@@ -230,7 +230,7 @@ export function Contact() {
                                     required
                                     rows={5}
                                     className="flex w-full rounded-xl border-2 border-gray-100 bg-gray-50 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#5ce68b] focus:border-transparent focus:bg-white transition-all font-medium resize-none"
-                                    placeholder="Hello, I'd like to discuss..."
+                                    placeholder="Namaste, I'd like to discuss..."
                                     suppressHydrationWarning
                                 />
                             </div>
