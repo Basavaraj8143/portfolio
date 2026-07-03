@@ -19,7 +19,7 @@ export function Education() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto"
       >
-        <div className="h-full bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border-[2px] border-[#f2efe9] transition-all duration-300 relative group overflow-hidden">
+        <div className="h-full bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] border-[2px] border-[#f2efe9] transition-all duration-300 group">
           
           <div className="relative flex flex-col md:flex-row md:items-center gap-6">
             <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-[1.25rem] bg-[#5ce68b] text-[#111111] shadow-sm transform group-hover:scale-105 transition-transform duration-300">
@@ -51,7 +51,7 @@ export function Education() {
                   <div>
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">CGPA</p>
                     <p className="text-sm font-black text-foreground">
-                      8.43 <span className="text-[10px] font-bold text-gray-400">/ 10</span>
+                      8.58 <span className="text-[10px] font-bold text-gray-400">/ 10</span>
                     </p>
                   </div>
                 </div>
