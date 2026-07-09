@@ -9,6 +9,7 @@ import { siteData } from "@/lib/site-data";
 export function About() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isPaused, setIsPaused] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         if (isPaused) return;
@@ -23,9 +24,11 @@ export function About() {
                     if (el.scrollLeft >= maxScrollLeft - 10) {
                         // Reached the end, smooth scroll all the way back to 0
                         el.scrollTo({ left: 0, behavior: "smooth" });
+                        setCurrentIndex(0);
                     } else {
                         // Move right one card roughly
                         el.scrollBy({ left: window.innerWidth * 0.85, behavior: "smooth" });
+                        setCurrentIndex(prev => (prev + 1) % 3);
                     }
                 }
             }
@@ -33,6 +36,17 @@ export function About() {
 
         return () => clearInterval(interval);
     }, [isPaused]);
+
+    // Track scroll position for dot indicators
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const el = scrollRef.current;
+            const scrollPos = el.scrollLeft;
+            const cardWidth = window.innerWidth * 0.85;
+            const index = Math.round(scrollPos / cardWidth);
+            setCurrentIndex(Math.min(index, 2));
+        }
+    };
 
     return (
         <Section id="about" className="py-20 md:py-32">
@@ -47,8 +61,12 @@ export function About() {
             </div>
 
             {/* Mobile Swipe Hint */}
-            <div className="flex md:hidden justify-end px-6 mb-4 text-gray-400 items-center opacity-50">
-                <ArrowRight className="w-4 h-4 animate-pulse" />
+            <div className="flex md:hidden flex-col items-center gap-3 mb-6 px-6">
+                <div className="flex items-center gap-2 text-gray-600 text-sm font-semibold bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
+                    <ArrowRight className="w-4 h-4 animate-pulse" />
+                    <span>Scroll to explore</span>
+                </div>
+                <p className="text-xs text-gray-400 font-medium">3 cards • Tap to pause</p>
             </div>
 
             {/* Container turns into horizontal scroll on mobile, grid on desktop */}
@@ -58,6 +76,7 @@ export function About() {
                 onMouseLeave={() => setIsPaused(false)}
                 onTouchStart={() => setIsPaused(true)}
                 onTouchEnd={() => setIsPaused(false)}
+                onScroll={handleScroll}
                 className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 md:px-0 pb-8 md:pb-0"
             >
                 <HighlightCard
@@ -84,6 +103,32 @@ export function About() {
                     accentHover="group-hover:opacity-80"
                     delay={0.3}
                 />
+            </div>
+
+            {/* Dot Indicators - Mobile Only */}
+            <div className="flex md:hidden justify-center gap-2.5 mt-6">
+                {[0, 1, 2].map((index) => (
+                    <button
+                        key={index}
+                        onClick={() => {
+                            if (scrollRef.current) {
+                                const cardWidth = window.innerWidth * 0.85;
+                                scrollRef.current.scrollTo({
+                                    left: index * cardWidth,
+                                    behavior: "smooth"
+                                });
+                                setCurrentIndex(index);
+                            }
+                        }}
+                        className={`transition-all duration-300 rounded-full ${
+                            currentIndex === index
+                                ? "w-3 h-3 bg-[#111111] shadow-md"
+                                : "w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400"
+                        }`}
+                        aria-label={`Go to card ${index + 1}`}
+                        suppressHydrationWarning
+                    />
+                ))}
             </div>
         </Section>
     );
