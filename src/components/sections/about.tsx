@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { Section } from "@/components/ui/section";
-import { Target, Heart, TrendingUp, ArrowRight } from "lucide-react";
+import { Target, Heart, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteData } from "@/lib/site-data";
 
@@ -58,15 +58,6 @@ export function About() {
                     My goal is to become a skilled software engineer and contribute to
                     real-world tech solutions.
                 </p>
-            </div>
-
-            {/* Mobile Swipe Hint */}
-            <div className="flex md:hidden flex-col items-center gap-3 mb-6 px-6">
-                <div className="flex items-center gap-2 text-gray-600 text-sm font-semibold bg-gray-50 px-4 py-2 rounded-full border border-gray-200">
-                    <ArrowRight className="w-4 h-4 animate-pulse" />
-                    <span>Scroll to explore</span>
-                </div>
-                <p className="text-xs text-gray-400 font-medium">3 cards • Tap to pause</p>
             </div>
 
             {/* Container turns into horizontal scroll on mobile, grid on desktop */}
