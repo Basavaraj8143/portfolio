@@ -1,4 +1,4 @@
-# Basavaraj Ningasani — Portfolio 🚀
+# Basavaraj Ningasani  Portfolio 🚀
 
 A highly interactive, premium personal portfolio built with a mobile-first design philosophy. Inspired by modern "Mindrift" aesthetics, this portfolio features dynamic Framer Motion animations, horizontal snap-scrolling, edge-to-edge typography, and interactive parallax graphics.
 
