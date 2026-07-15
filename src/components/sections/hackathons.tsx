@@ -154,10 +154,10 @@ export function Hackathons() {
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 text-center text-foreground tracking-tight">Hackathons</h2>
             <p className="text-center text-gray-500 font-medium text-lg md:text-xl mb-12">Events I&apos;ve participated in</p>
 
-            <div className="relative max-w-6xl mx-auto px-4 md:px-0">
+            <div className="relative max-w-6xl mx-auto">
                 <div 
                     ref={scrollRef}
-                    className="flex flex-row gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 scroll-smooth"
+                    className="flex flex-row gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 px-4 md:px-0 scroll-smooth"
                 >
                     {hackathonsData.map((hackathon, index) => (
                         <HackathonCard key={index} hackathon={hackathon} index={index} />
