@@ -35,6 +35,15 @@ const openSourceData = [
         logoColor: "bg-[#F97316]", // Amber/Orange
     },
     {
+        repo: "oppia/oppia",
+        title: "Angular Strict Template Type-Checking Cleanup (PR #26275)",
+        description: "Implemented strict template type-checking fixes across multiple Angular components by improving typings, null safety, and template bindings. Addressed reviewer feedback, restarted with a clean branch after workflow corrections, and investigated CI coverage failures by identifying missing frontend unit tests.",
+        status: "Open",
+        icon: <GitPullRequest className="w-4 h-4" />,
+        link: "https://github.com/oppia/oppia/pull/26275",
+        logoColor: "bg-[#00BCD4]", // Oppia Cyan
+    },
+    {
         repo: "supabase/cli",
         title: "Gzipped Seed File Support (PR #5105)",
         description: "Added support for .sql.gz seed files with automatic decompression during database seeding. Implemented extension-based detection, change tracking, and rigorous seeding flow tests.",
