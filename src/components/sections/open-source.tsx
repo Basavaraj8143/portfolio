@@ -51,8 +51,51 @@ const openSourceData = [
         icon: <GitPullRequest className="w-4 h-4" />,
         link: "https://github.com/supabase/cli/pull/5105",
         logoColor: "bg-[#3ECF8E]", // Supabase Green
+    },
+    {
+        repo: "More on GitHub",
+        title: "Explore More Contributions",
+        description: "I've contributed to many other open-source projects, fixing bugs, improving docs, and adding new features. Check out my GitHub profile to see all my pull requests and activity!",
+        status: "",
+        icon: <Github className="w-4 h-4" />,
+        link: "https://github.com/Basavaraj8143",
+        logoColor: "bg-[#111111]",
+        isCta: true,
     }
-];
+];function CtaCard({ pr }: { pr: typeof openSourceData[0] }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="w-[85vw] sm:w-[50vw] md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] h-full flex-shrink-0 snap-center"
+        >
+            <div className="h-full bg-white rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-6 lg:p-8 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-2 border-gray-100 justify-center items-center text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#f9fafb] group-hover:bg-[#111111] transition-colors duration-500 z-0"/>
+                <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-200">
+                        <Github className="w-8 h-8 text-[#111111]" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-foreground group-hover:text-white transition-colors tracking-tight">
+                        {pr.title}
+                    </h3>
+                    <p className="text-gray-500 mb-8 group-hover:text-gray-300 transition-colors font-medium leading-relaxed text-sm md:text-base">
+                        {pr.description}
+                    </p>
+                    <a
+                        href={pr.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#111111] text-white text-xs md:text-sm font-black uppercase tracking-widest group-hover:bg-[#5ce68b] group-hover:text-[#111111] transition-all shadow-sm"
+                    >
+                        Visit GitHub <ExternalLink className="w-4 h-4 ml-1" />
+                    </a>
+                </div>
+            </div>
+        </motion.div>
+    );
+}
 
 function OpenSourceCard({ pr, index }: { pr: typeof openSourceData[0]; index: number }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -138,9 +181,12 @@ export function OpenSource() {
                     ref={scrollRef}
                     className="flex flex-row gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-6 px-4 md:px-0 scroll-smooth"
                 >
-                    {openSourceData.map((pr, index) => (
-                        <OpenSourceCard key={index} pr={pr} index={index} />
-                    ))}
+                    {openSourceData.map((pr, index) => {
+                        if (pr.isCta) {
+                            return <CtaCard key={index} pr={pr} />;
+                        }
+                        return <OpenSourceCard key={index} pr={pr} index={index} />;
+                    })}
                 </div>
 
                 {/* Left Arrow Button (Desktop only) */}
