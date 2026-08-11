@@ -15,25 +15,25 @@ const projectsData = [
         links: { github: "https://github.com/Basavaraj8143/studium" },
     },
     {
-        title: "AgriSense",
-        description: "An AI-powered smart farming platform with crop recommendation, pest detection, market insights, and multilingual support.",
-        image: "/projects/agrisense.png",
-        tags: ["HTML", "JavaScript", "Python"],
-        links: { github: "https://github.com/Basavaraj8143/agrisense" },
+        title: "Distributed Storage System",
+        description: "A scalable distributed storage system with replication, heartbeat-based failure detection, and automatic re-replication.",
+        image: "/projects/distributed-storage-system.png",
+        tags: ["Java", "Distributed Systems", "Storage"],
+        links: { github: "https://github.com/Basavaraj8143/distributed-storage-system" },
     },
     {
-        title: "Audio2Notes AI",
+        title: "Audio2Notes LLM",
         description: "Transforms lecture audio into structured study notes with transcription, cleanup, and grounded Q&A over transcripts.",
         image: "/projects/audio2notes-ai.png",
         tags: ["Python", "JavaScript", "HTML"],
         links: { github: "https://github.com/Basavaraj8143/audio2notes-ai" },
     },
     {
-        title: "Distributed Storage System",
-        description: "A scalable distributed storage system with replication, heartbeat-based failure detection, and automatic re-replication.",
-        image: "/projects/distributed-storage-system.png",
-        tags: ["Java", "Distributed Systems", "Storage"],
-        links: { github: "https://github.com/Basavaraj8143/distributed-storage-system" },
+        title: "AgriSense",
+        description: "An AI-powered smart farming platform with crop recommendation, pest detection, market insights, and multilingual support.",
+        image: "/projects/agrisense.png",
+        tags: ["HTML", "JavaScript", "Python"],
+        links: { github: "https://github.com/Basavaraj8143/agrisense" },
     },
     {
         title: "Riskrader BGK Hackathon",
@@ -193,7 +193,7 @@ function CtaCard({ project }: { project: typeof projectsData[0] }) {
             className="w-[85vw] sm:w-[50vw] md:w-auto h-full flex-shrink-0 snap-center md:snap-align-none"
         >
             <div className="h-full bg-white rounded-[2rem] p-8 flex flex-col shadow-md border-2 border-gray-100 justify-center items-center text-center group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[#f9fafb] group-hover:bg-[#111111] transition-colors duration-500 z-0"/>
+                <div className="absolute inset-0 bg-[#f9fafb] group-hover:bg-[#111111] transition-colors duration-500 z-0" />
                 <div className="relative z-10 flex flex-col items-center">
                     <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border border-gray-200">
                         <Github className="w-8 h-8 text-[#111111]" />
@@ -236,7 +236,7 @@ export function Projects() {
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 text-center text-foreground tracking-tight">My Projects</h2>
             <p className="text-center text-gray-500 font-medium text-lg md:text-xl mb-12">A showcase of my recent work</p>
 
-            <div 
+            <div
                 ref={scrollRef}
                 className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4 md:px-0 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory hide-scrollbar pb-6 md:pb-0"
             >
@@ -250,15 +250,15 @@ export function Projects() {
 
             {/* Mobile Navigation Arrows (Below Carousel) */}
             <div className="flex md:hidden justify-center items-center gap-4 mt-2">
-                <button 
-                    onClick={() => scroll("left")} 
+                <button
+                    onClick={() => scroll("left")}
                     className="p-3 bg-white border-2 border-gray-100 rounded-full hover:bg-gray-100 active:scale-95 transition-all shadow-sm flex items-center justify-center"
                     aria-label="Scroll left"
                 >
                     <ChevronLeft className="w-5 h-5 text-gray-700" />
                 </button>
-                <button 
-                    onClick={() => scroll("right")} 
+                <button
+                    onClick={() => scroll("right")}
                     className="p-3 bg-white border-2 border-gray-100 rounded-full hover:bg-gray-100 active:scale-95 transition-all shadow-sm flex items-center justify-center"
                     aria-label="Scroll right"
                 >
