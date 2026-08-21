@@ -1,4 +1,5 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { siteData } from "@/lib/site-data";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://basavaraj.tech/sitemap.xml',
-  }
+    sitemap: `${siteData.url}/sitemap.xml`,
+  };
 }
