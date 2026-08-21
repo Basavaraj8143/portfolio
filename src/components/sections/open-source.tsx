@@ -17,6 +17,15 @@ const openSourceData = [
         logoColor: "bg-[#31C48D]", // Hoppscotch Green
     },
     {
+        repo: "oppia/oppia",
+        title: "Angular Strict Template Type-Checking Cleanup (PR #26866)",
+        description: "Implemented strict template type-checking fixes across multiple Angular components by improving typings, null safety, and template bindings. Addressed reviewer feedback, restarted with a clean branch after workflow corrections, and investigated CI coverage failures by identifying missing frontend unit tests.",
+        status: "Merged",
+        icon: <GitMerge className="w-4 h-4" />,
+        link: "https://github.com/oppia/oppia/pull/26866",
+        logoColor: "bg-[#00BCD4]", // Oppia Cyan
+    },
+    {
         repo: "electron/electron",
         title: "Chinese Localization Fix",
         description: "Fixed incorrect translation of MenuItem enum values in Chinese API docs. Corrected <code> tag formatting, punctuation, broken links, and duplicate strings. Cleared all Crowdin validation errors.",
@@ -33,15 +42,6 @@ const openSourceData = [
         icon: <GitPullRequest className="w-4 h-4" />,
         link: "https://github.com/prajaakeeya/prajaakeeya-backend/pull/32",
         logoColor: "bg-[#F97316]", // Amber/Orange
-    },
-    {
-        repo: "oppia/oppia",
-        title: "Angular Strict Template Type-Checking Cleanup (PR #26275)",
-        description: "Implemented strict template type-checking fixes across multiple Angular components by improving typings, null safety, and template bindings. Addressed reviewer feedback, restarted with a clean branch after workflow corrections, and investigated CI coverage failures by identifying missing frontend unit tests.",
-        status: "Open",
-        icon: <GitPullRequest className="w-4 h-4" />,
-        link: "https://github.com/oppia/oppia/pull/26275",
-        logoColor: "bg-[#00BCD4]", // Oppia Cyan
     },
     {
         repo: "supabase/cli",

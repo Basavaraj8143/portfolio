@@ -7,6 +7,9 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: siteData.title,
   description: siteData.summary,
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
