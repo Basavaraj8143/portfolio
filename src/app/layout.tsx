@@ -49,7 +49,15 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo.png",
+    icon: [
+      { url: "/images/icons/favicons/favicon.ico" },
+      {
+        url: "/images/icons/favicons/favicon-128x128.png",
+        type: "image/png",
+        sizes: "128x128",
+      },
+    ],
+    shortcut: "/images/icons/favicons/favicon.ico",
   },
 };
 
