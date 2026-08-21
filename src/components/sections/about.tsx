@@ -53,10 +53,9 @@ export function About() {
             <div className="text-center max-w-4xl mx-auto mb-20">
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground tracking-tight">About Me</h2>
                 <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium">
-                    I&apos;m <strong className="text-foreground font-black">{siteData.shortName}</strong>, a Computer Science student passionate about problem solving,
-                    building impactful projects, and continuously improving my skills.
-                    My goal is to become a skilled software engineer and contribute to
-                    real-world tech solutions.
+                    I&apos;m <strong className="text-foreground font-black">{siteData.shortName}</strong>, a CSE student who enjoys contributing to large open-source codebases,
+                    exploring new technologies, and solving problems with structured workflows. I enjoy adapting to different tools and challenges rather than limiting myself to a single stack.
+                    With 200+ LeetCode problems and 5+ hackathons, I&apos;m constantly learning by building, contributing, and solving.
                 </p>
             </div>
 

@@ -9,7 +9,7 @@ export const siteData = {
   location: "Karnataka, India",
   email: "basavarajningasani123@gmail.com",
   phone: "+91 7019910124",
-  resumePath: "/resume.pdf",
+  resumePath: "/documents/resume.pdf",
   social: {
     github: "https://github.com/Basavaraj8143",
     linkedin: "https://linkedin.com/in/basavaraj-ningasani-0796712a5",

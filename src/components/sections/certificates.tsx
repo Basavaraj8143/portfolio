@@ -12,7 +12,7 @@ const certificatesData = [
     issuer: "Oracle University",
     description:
       "Certified in foundational AI and Oracle Cloud Infrastructure concepts, covering AI principles, OCI services, and cloud-based solution patterns.",
-    image: "/oracle.png",
+    image: "/images/certificates/oracle.png",
     badge: "Completion",
     link: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=3EA9F032D808B3DC6892EE9A7A41C02A9F4D905BE76AC47928E30BAD94A77AA3",
   },
@@ -21,7 +21,7 @@ const certificatesData = [
     issuer: "Forage in collaboration with Tata",
     description:
       "Completed practical tasks in Identity and Access Management (IAM), IAM strategy assessment, custom IAM solutions, and platform integration.",
-    image: "/tata.png",
+    image: "/images/certificates/tata.png",
     badge: "Verified",
     link: "https://www.theforage.com/simulations/tata/cybersecurity-sbda",
   },

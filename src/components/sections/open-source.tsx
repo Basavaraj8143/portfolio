@@ -174,7 +174,7 @@ export function OpenSource() {
     return (
         <Section id="open-source" className="py-20 md:py-32 bg-[#fdfbf7]">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5 text-center text-foreground tracking-tight">Open Source</h2>
-            <p className="text-center text-gray-500 font-medium text-lg md:text-xl mb-12">Proud contributions to the community</p>
+            <p className="text-center text-gray-500 font-medium text-lg md:text-xl mb-12">My proud contributions to the community</p>
 
             <div className="relative max-w-6xl mx-auto">
                 <div 

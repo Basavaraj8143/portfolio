@@ -9,7 +9,7 @@ export const portfolioData = {
     location: "Karnataka, India",
     email: "basavarajningasani123@gmail.com",
     phone: "+91 7019910124",
-    resume: "/resume.pdf",
+    resume: "/documents/resume.pdf",
     social: {
       github: "https://github.com/Basavaraj8143",
       linkedin: "https://linkedin.com/in/basavaraj-ningasani-0796712a5",
