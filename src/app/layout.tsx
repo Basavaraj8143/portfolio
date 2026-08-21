@@ -50,14 +50,18 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/images/icons/favicons/favicon.ico" },
+      { url: "/images/icons/favicon/favicon.ico" },
       {
-        url: "/images/icons/favicons/favicon-128x128.png",
+        url: "/images/icons/favicon/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/images/icons/favicon/favicon-96x96.png",
         type: "image/png",
-        sizes: "128x128",
+        sizes: "96x96",
       },
     ],
-    shortcut: "/images/icons/favicons/favicon.ico",
+    shortcut: "/images/icons/favicon/favicon.ico",
   },
 };
 
