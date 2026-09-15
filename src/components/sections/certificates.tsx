@@ -30,7 +30,7 @@ const certificatesData = [
     issuer: "Great Learning",
     description:
       "Learned core and advanced DSA concepts using C, including arrays, linked lists, stacks, queues, trees, sorting, and searching techniques.",
-    image: "/dsa_in_c.png",
+    image: "/images/certificates/dsa_in_c.png",
     badge: "Excellence",
     link: "https://www.mygreatlearning.com/certificate/KAFSXQDV",
   },
