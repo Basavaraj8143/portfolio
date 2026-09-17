@@ -129,10 +129,10 @@ export function Hero() {
                         {/* Simple static photo frame without hover translations */}
                         <div className="absolute inset-0 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-white border-4 border-white shadow-xl z-10">
                             <Image
-                                src="/images/profile/newimg.jpg"
+                                src="/images/profile/newimg.png"
                                 alt={siteData.name}
                                 fill
-                                className="object-cover scale-[1.25] object-[center_42%]"
+                                className="object-cover scale-[1.12] object-[center_25%]"
                                 priority
                             />
                         </div>
