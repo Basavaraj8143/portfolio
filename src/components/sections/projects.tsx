@@ -36,11 +36,11 @@ const projectsData = [
         links: { github: "https://github.com/Basavaraj8143/agrisense" },
     },
     {
-        title: "Riskrader BGK Hackathon",
-        description: "An AI-powered fraud detection platform combining pattern matching, ML scoring, and LLM assistance for cybercrime reporting.",
-        image: "/projects/riskrader-bgk-hackathon.png",
-        tags: ["JavaScript", "Python", "FinTech"],
-        links: { github: "https://github.com/Basavaraj8143/Riskrader-BGK-Hackathon" },
+        title: "URL Shortener",
+        description: "A full-stack URL shortening service with custom aliases, JWT authentication, click analytics, URL expiration, Redis caching, and rate limiting.",
+        image: "/projects/url-shortener.png",
+        tags: ["Java", "Spring Boot", "Redis"],
+        links: { github: "https://github.com/Basavaraj8143/url-shortener" },
     },
     {
         title: "More on GitHub",
