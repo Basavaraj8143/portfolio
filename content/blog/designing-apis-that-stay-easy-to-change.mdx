@@ -1,0 +1,49 @@
+---
+title: "Designing APIs that stay easy to change"
+description: "A sample guide to clear boundaries, useful errors, and small choices that make an API easier to evolve."
+date: "2026-10-13"
+slug: "designing-apis-that-stay-easy-to-change"
+thumbnail: "/blog/api-design.svg"
+tags:
+  - Backend
+  - API design
+  - TypeScript
+category: "Backend development"
+published: true
+readingTime: auto
+---
+
+> **Sample article:** This illustrative piece explains general API design ideas. It does not describe a personal project or claim completed work.
+
+## Start with the boundary
+
+An API is a boundary between a caller and the code that fulfills a request. A stable boundary makes that relationship explicit: what the caller may send, what it can expect back, and how failures are represented.
+
+## Make the contract visible
+
+A small request and response type can make a contract concrete. Validation belongs at the edge, where untrusted input enters the application.
+
+```ts
+type CreateNoteInput = {
+  title: string;
+  body: string;
+};
+
+type CreateNoteResult =
+  | { ok: true; id: string }
+  | { ok: false; reason: 'invalid-input' };
+```
+
+### Keep failures useful
+
+Errors are part of the contract. A caller should be able to distinguish invalid input from a missing resource or a temporary service problem, without depending on internal implementation details.
+
+- Use predictable error shapes.
+- Return only details that help a caller recover.
+- Keep internal stack traces and secrets out of public responses.
+
+## Leave room to evolve
+
+Good boundaries make change less surprising. Add fields in ways that existing clients can tolerate, document behavior that matters, and version only when compatibility cannot be maintained.
+
+For more on the type system, see the [TypeScript handbook](https://www.typescriptlang.org/docs/).

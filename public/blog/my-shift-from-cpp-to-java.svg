@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dbeafe"/>
+      <stop offset=".55" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#ffedd5"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="32" fill="url(#bg)"/>
+  <rect x="130" y="145" width="700" height="310" rx="28" fill="#fff" fill-opacity=".88" stroke="#fff" stroke-width="5"/>
+  <rect x="190" y="205" width="205" height="190" rx="22" fill="#eff6ff"/>
+  <text x="292" y="300" fill="#2563eb" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="700" text-anchor="middle">C++</text>
+  <text x="292" y="345" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">DSA PRACTICE</text>
+  <path d="M432 300h94m-25-25 25 25-25 25" stroke="#94a3b8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="565" y="205" width="205" height="190" rx="22" fill="#fff7ed"/>
+  <text x="667" y="300" fill="#ea580c" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="700" text-anchor="middle">Java</text>
+  <text x="667" y="345" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="3" text-anchor="middle">SPRING BOOT</text>
+</svg>
