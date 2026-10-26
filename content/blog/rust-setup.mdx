@@ -1,0 +1,69 @@
+---
+title: "Setting Up Rust for Android Development on Windows"
+description: "My experience setting up Rust and native build tools to compile an Android library on Windows."
+date: "2026-10-18"
+slug: "rust-android-development-windows"
+thumbnail: "/blog/rust-android-development-windows.svg"
+tags:
+  - Rust
+  - Android
+  - Windows
+  - Native Development
+category: "Engineering Journey"
+published: false
+readingTime: auto
+---
+
+# Why I Needed Rust
+
+While exploring the GitNote Android project, I discovered that it used a native Rust library called `git_wrapper` for Git-related operations.
+
+The application loaded it using:
+
+```java
+System.loadLibrary("git_wrapper");
+```
+
+Initially, the application crashed because the required `libgit_wrapper.so` library was missing.
+
+This led me to investigate how the native library was built and how I could prepare the necessary environment on Windows.
+
+## Setting Up the Environment
+
+My development machine runs Windows, but the library needed to run on Android. That meant I needed to configure Rust for Android cross-compilation rather than build a Windows executable.
+
+I set up the Rust toolchain and Android targets, along with the additional tools required by the project's native build process:
+
+- **Rust and Cargo** for compiling and managing Rust code.
+- **MSYS2 and GNU Make** for running the project's build instructions.
+- **Visual Studio Build Tools** for the required Windows-side C/C++ tooling.
+- **Android NDK** for Android native compilation.
+- **OpenSSL prebuilts** for the project's native dependencies.
+
+Getting everything installed was only part of the work. The tools also needed to be configured so the build process could locate the appropriate compilers, dependencies, and target toolchain.
+
+## Building the Native Library
+
+After preparing the environment, I ran the project's build command:
+
+```bash
+make build_install
+```
+
+The build completed successfully and copied `libgit_wrapper.so` into the Android project's native-library directory.
+
+This was an important step because the Kotlin application expected the native library to be available at runtime.
+
+## What I Learned
+
+This setup taught me that building an Android application can involve more than Kotlin or Java and Gradle.
+
+When an application depends on native code, the target architecture, compiler toolchain, native dependencies, and library packaging all matter.
+
+I also learned to distinguish between successfully building the native component and getting the complete application to behave as expected. Solving the build problem doesn't automatically solve every application-level issue.
+
+## Final Thoughts
+
+What started as an investigation into a missing `.so` file turned into a practical introduction to Rust, cross-compilation, and Android's native build environment.
+
+It was a reminder that understanding how software is built can be just as important as understanding the code itself.

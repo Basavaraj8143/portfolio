@@ -1,0 +1,38 @@
+---
+title: "I automated Certificate Generation with Google Apps Script"
+description: "How I automated PDF certificate generation and team-wise organization for an IEEE hackathon."
+date: "2026-10-24"
+slug: "automating-hackathon-certificates"
+thumbnail: "/blog/automating-hackathon-certificates.svg"
+tags:
+  - Google Apps Script
+  - Automation
+  - Google Drive
+category: "Automation"
+published: true
+readingTime: auto
+---
+
+# The Problem
+
+During an IEEE hackathon, I received a participant spreadsheet containing names, email addresses, team names, and member details.
+
+Creating certificates individually would mean repeating the same steps for multiple participants. I wanted to make the process simpler.
+
+## The Automation
+
+I used a Google Slides certificate template that already had the design in place, with a placeholder for the participant's name.
+
+The script read the participant data, replaced the name placeholder, generated a PDF certificate for each participant, and organized the output into separate Google Drive folders based on team names.
+
+Instead of manually creating and sorting every certificate, I could automate the repetitive parts of the workflow.
+
+## What's Next?
+
+Email delivery was something I considered for a future improvement. The idea was to extend the workflow so that certificates could also be sent directly to participants.
+
+## What I Learned
+
+This was a small automation, but it showed me how existing tools like Google Slides, Google Drive, and Google Apps Script can work together to solve a practical problem.
+
+Not every useful engineering solution needs to be a large application. Sometimes, automating a repetitive task is enough to make a process much easier.

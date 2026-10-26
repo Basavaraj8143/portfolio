@@ -1,0 +1,58 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e0e7ff"/>
+      <stop offset=".55" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="terminal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#17172b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="32" fill="url(#bg)"/>
+  <circle cx="800" cy="110" r="100" fill="#a5b4fc" fill-opacity=".18"/>
+  <circle cx="140" cy="490" r="90" fill="#6ee7b7" fill-opacity=".18"/>
+
+  <rect x="108" y="105" width="744" height="390" rx="26" fill="#fff" fill-opacity=".92" stroke="#fff" stroke-width="4"/>
+  <path d="M134 105h692a26 26 0 0 1 26 26v42H108v-42a26 26 0 0 1 26-26Z" fill="#e9edf5"/>
+  <circle cx="143" cy="137" r="6" fill="#f87171"/>
+  <circle cx="165" cy="137" r="6" fill="#fbbf24"/>
+  <circle cx="187" cy="137" r="6" fill="#34d399"/>
+  <text x="480" y="143" fill="#475569" font-family="Inter,Arial,sans-serif" font-size="14" text-anchor="middle" letter-spacing="2">AI CODING WORKFLOW</text>
+
+  <rect x="140" y="195" width="440" height="230" rx="16" fill="url(#terminal)"/>
+  <rect x="140" y="195" width="440" height="38" rx="16" fill="#24243c"/>
+  <path d="M140 217v16h440v-16" fill="#24243c"/>
+  <circle cx="160" cy="214" r="4" fill="#fb7185"/>
+  <circle cx="175" cy="214" r="4" fill="#fbbf24"/>
+  <circle cx="190" cy="214" r="4" fill="#4ade80"/>
+  <text x="212" y="219" fill="#cbd5e1" font-family="monospace" font-size="12">claude-code / terminal</text>
+
+  <text x="165" y="267" fill="#6ee7b7" font-family="monospace" font-size="16">$ claude</text>
+  <text x="165" y="301" fill="#e2e8f0" font-family="monospace" font-size="14">Inspect my project structure</text>
+  <text x="165" y="335" fill="#a5b4fc" font-family="monospace" font-size="14">→ Analyzing files...</text>
+  <rect x="165" y="357" width="300" height="8" rx="4" fill="#475569"/>
+  <rect x="165" y="357" width="205" height="8" rx="4" fill="#34d399"/>
+  <text x="165" y="397" fill="#94a3b8" font-family="monospace" font-size="12">Model response: awaiting test</text>
+
+  <path d="M596 300h28m-10-10 10 10-10 10" stroke="#94a3b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="642" y="195" width="178" height="230" rx="16" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2"/>
+  <rect x="670" y="221" width="122" height="52" rx="12" fill="#fff"/>
+  <path d="m690 247 9-10 9 10-9 10Z" fill="#6366f1"/>
+  <text x="746" y="243" fill="#4338ca" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle">NVIDIA NIM</text>
+  <text x="746" y="258" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="9" text-anchor="middle">MODEL PROVIDER</text>
+
+  <path d="M675 295h112" stroke="#c7d2fe" stroke-width="2"/>
+  <text x="731" y="320" fill="#312e81" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" text-anchor="middle">NEMOTRON</text>
+  <text x="731" y="339" fill="#312e81" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" text-anchor="middle">3 ULTRA</text>
+  <rect x="674" y="359" width="114" height="30" rx="15" fill="#d1fae5"/>
+  <circle cx="689" cy="374" r="4" fill="#059669"/>
+  <text x="738" y="378" fill="#047857" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="700" text-anchor="middle">API TEST PENDING</text>
+
+  <text x="480" y="458" fill="#334155" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="2">EXPERIMENT • CONFIGURE • TEST</text>
+  <text x="480" y="535" fill="#4338ca" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="800" text-anchor="middle">A FREE AI CODING SETUP</text>
+  <text x="480" y="565" fill="#64748b" font-family="Inter,Arial,sans-serif" font-size="14" text-anchor="middle">Exploring AI-assisted development, one step at a time</text>
+</svg>

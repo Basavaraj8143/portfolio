@@ -1,0 +1,40 @@
+---
+title: "How I Reverse Engineered Campus.life with JADX"
+description: "My experience tracing the QR check-in flow of an Android app to understand how its code works."
+date: "2026-10-15"
+slug: "exploring-android-app-with-jadx"
+thumbnail: "/blog/exploring-android-app-with-jadx.svg"
+tags:
+  - Android
+  - Reverse Engineering
+  - JADX
+category: "Technical Exploration"
+published: true
+readingTime: auto
+---
+
+# Curiosity About an App
+
+Most of the time, we work with code we write ourselves. I wanted to see what it was like to explore a codebase I hadn't written.
+
+So I opened the Campus.Life Android app in JADX and started looking into its QR check-in flow.
+
+## Following the Code
+
+The code wasn't easy to understand at first. Many classes had obfuscated names, such as `P2.x` and `B3.C0054f`, which didn't reveal much about their purpose.
+
+Instead of relying on class names, I started tracing how different parts of the code connected to each other.
+
+I followed the QR check-in flow from the UI interaction toward the network response, trying to understand how the pieces fitted together.
+
+## What I Learned
+
+This experience reminded me that reading code is a skill of its own. When names don't explain what's happening, you have to look at relationships, method calls, and how data moves through the application.
+
+I didn't need to understand the entire app at once. I just needed to follow one flow and gradually build a clearer picture.
+
+That's what made the investigation interesting for me.
+
+## Final Thought
+
+Sometimes, the best way to learn how software works is to explore something unfamiliar and keep asking questions until the pieces start making sense.

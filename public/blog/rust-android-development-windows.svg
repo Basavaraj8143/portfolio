@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#ffedd5"/><stop offset=".52" stop-color="#f8fafc"/><stop offset="1" stop-color="#dbeafe"/></linearGradient></defs>
+  <rect width="960" height="600" rx="32" fill="url(#bg)"/>
+  <rect x="116" y="142" width="728" height="316" rx="26" fill="#fff" fill-opacity=".92" stroke="#fff" stroke-width="5"/>
+  <rect x="158" y="184" width="430" height="232" rx="18" fill="#0f172a"/>
+  <path d="M158 228h430" stroke="#334155" stroke-width="2"/>
+  <circle cx="184" cy="206" r="6" fill="#fca5a5"/><circle cx="204" cy="206" r="6" fill="#fcd34d"/><circle cx="224" cy="206" r="6" fill="#86efac"/>
+  <text x="184" y="270" fill="#86efac" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="17">&gt; cargo build</text>
+  <text x="184" y="302" fill="#cbd5e1" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="14">target: aarch64-linux-android</text>
+  <text x="184" y="334" fill="#7dd3fc" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="14">Compiling git_wrapper</text>
+  <text x="184" y="366" fill="#86efac" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="14">Finished successfully</text>
+  <rect x="630" y="178" width="150" height="242" rx="24" fill="#1e293b"/>
+  <rect x="642" y="199" width="126" height="194" rx="13" fill="#f8fafc"/>
+  <rect x="659" y="221" width="92" height="60" rx="8" fill="#ffedd5"/>
+  <path d="m705 234 19 8v17c0 14-9 23-19 27-10-4-19-13-19-27v-17l19-8Z" fill="#ea580c"/>
+  <path d="m697 258 6 6 12-14" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="659" y="297" width="92" height="10" rx="5" fill="#cbd5e1"/><rect x="659" y="318" width="72" height="10" rx="5" fill="#e2e8f0"/>
+  <circle cx="705" cy="405" r="4" fill="#94a3b8"/>
+</svg>

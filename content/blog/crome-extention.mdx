@@ -1,0 +1,40 @@
+---
+title: "Building a Chrome Extension to Ask Gemini About Screenshots"
+description: "How I combined a screenshot-inspired selection interface, JavaScript OCR, and Gemini to work with on-screen text."
+date: "2026-10-16"
+slug: "chrome-extension-screenshot-to-gemini"
+thumbnail: "/blog/chrome-extension-screenshot-to-gemini.svg"
+tags:
+  - JavaScript
+  - Chrome Extensions
+  - OCR
+  - Gemini AI
+category: "Projects & Experiments"
+published: true
+readingTime: auto
+---
+
+# The Idea
+
+I wanted a simple way to select a portion of my screen, extract its text, and ask AI about it without manually copying everything.
+
+The selection interface was inspired by Microsoft Edge's screenshot tool. I wanted a similar experience, but with one extra step: connecting the selected content to Gemini.
+
+## How It Works
+
+The workflow is simple:
+
+1. Select an area of the screen using the screenshot-inspired interface.
+2. Extract the text using OCR with JavaScript.
+3. Send the extracted text to Gemini using an API key.
+4. Receive an AI response without manually copying the text.
+
+I built the extension using JavaScript, HTML, CSS, Chrome Extension Manifest V3, and the Gemini API.
+
+## Looking Back
+
+At the time, the screenshot tool I was using didn't offer built-in text extraction. I wanted to explore a way to combine screen selection, OCR, and AI in one workflow.
+
+Since then, the tool has introduced built-in text extraction. Still, building my own extension gave me practical experience connecting browser functionality, text recognition, and an AI API.
+
+Sometimes, the best part of building something isn't creating a completely new idea. It's exploring an existing idea and making it useful in your own way.

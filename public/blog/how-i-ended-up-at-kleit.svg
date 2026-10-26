@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dbeafe"/>
+      <stop offset=".55" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="600" rx="32" fill="url(#bg)"/>
+  <rect x="116" y="126" width="728" height="348" rx="28" fill="#fff" fill-opacity=".9" stroke="#fff" stroke-width="5"/>
+  <rect x="156" y="166" width="254" height="268" rx="18" fill="#eff6ff"/>
+  <text x="184" y="207" fill="#475569" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">KCET COUNSELLING</text>
+  <rect x="184" y="231" width="198" height="46" rx="10" fill="#fff"/>
+  <circle cx="207" cy="254" r="9" fill="#60a5fa"/>
+  <path d="M203 254h8m-4-4v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <rect x="226" y="248" width="132" height="11" rx="5.5" fill="#cbd5e1"/>
+  <rect x="184" y="290" width="198" height="46" rx="10" fill="#fff"/>
+  <circle cx="207" cy="313" r="9" fill="#a5b4fc"/>
+  <path d="m203 313 3 3 6-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="226" y="307" width="132" height="11" rx="5.5" fill="#cbd5e1"/>
+  <rect x="184" y="349" width="198" height="46" rx="10" fill="#fff"/>
+  <circle cx="207" cy="372" r="9" fill="#34d399"/>
+  <path d="m203 372 3 3 6-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="226" y="366" width="132" height="11" rx="5.5" fill="#cbd5e1"/>
+  <path d="M432 300h56m-20-20 20 20-20 20" stroke="#94a3b8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="524" y="166" width="280" height="268" rx="18" fill="#f0fdf4"/>
+  <path d="M554 356h220" stroke="#86efac" stroke-width="7" stroke-linecap="round"/>
+  <path d="M578 356V266h174v90M606 266v-37h118v37" fill="#fff" stroke="#16a34a" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M588 286h30v39h-30zm62 0h30v39h-30zm62 0h30v39h-30z" fill="#bfdbfe"/>
+  <path d="M644 356v-43h40v43" fill="#dcfce7" stroke="#16a34a" stroke-width="5"/>
+  <path d="M665 230v-23m-12 0h24" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="756" cy="207" r="20" fill="#dbeafe"/>
+  <path d="m748 207 6 6 11-13" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="664" y="399" fill="#166534" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="2">A NEW CHAPTER</text>
+</svg>
