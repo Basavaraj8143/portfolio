@@ -1,0 +1,22 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#E0E7FF"/>
+      <stop offset="1" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="28" fill="url(#bg)"/>
+  <rect x="48" y="48" width="864" height="504" rx="28" fill="#FFFFFF" fill-opacity=".8"/>
+
+  <rect x="100" y="90" width="760" height="220" rx="20" fill="#EEF2FF"/>
+  <path d="M150 245 L250 210 L350 230 L450 155 L550 190 L650 130 L800 165"
+        fill="none" stroke="#6366F1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="100" y="375" font-family="Arial,sans-serif" font-size="42" font-weight="bold" fill="#3730A3">MY TRADING JOURNEY</text>
+  <text x="102" y="420" font-family="Arial,sans-serif" font-size="25" fill="#64748B">Profit, loss &amp; A lesson in when to step back.</text>
+
+  <rect x="100" y="460" width="340" height="52" rx="26" fill="#D1FAE5"/>
+  <text x="270" y="493" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#047857">RISK FIRST</text>
+</svg>
