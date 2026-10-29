@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0E7FF"/>
+      <stop offset="1" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="600" rx="28" fill="url(#bg)"/>
+  <rect x="36" y="36" width="888" height="528" rx="26" fill="#FFFEFA"/>
+
+  <text x="76" y="91" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3" fill="#64748B">A SMALL AUTOMATION PROJECT</text>
+
+  <rect x="76" y="120" width="808" height="230" rx="22" fill="#F1F5F9"/>
+
+  <rect x="104" y="155" width="205" height="155" rx="16" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+  <rect x="104" y="155" width="205" height="38" rx="16" fill="#D1FAE5"/>
+  <path d="M104 178 V193 H309 V178" fill="#D1FAE5"/>
+  <text x="126" y="181" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#065F46">MENU SHEET</text>
+  <path d="M126 219 H283 M126 244 H263 M126 269 H276" stroke="#9CA3AF" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="126" cy="219" r="4" fill="#10B981"/>
+  <circle cx="126" cy="244" r="4" fill="#10B981"/>
+  <circle cx="126" cy="269" r="4" fill="#10B981"/>
+
+  <path d="M329 231 H382" stroke="#818CF8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M370 218 L384 231 L370 244" stroke="#818CF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="394" y="155" width="172" height="155" rx="16" fill="#111827"/>
+  <circle cx="420" cy="181" r="7" fill="#A5B4FC"/>
+  <circle cx="442" cy="181" r="7" fill="#86EFAC"/>
+  <text x="415" y="223" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">n8n</text>
+  <text x="415" y="251" font-family="Arial, sans-serif" font-size="16" fill="#C7D2FE">Scheduled</text>
+  <text x="415" y="274" font-family="Arial, sans-serif" font-size="16" fill="#C7D2FE">workflow</text>
+
+  <path d="M584 231 H637" stroke="#818CF8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M625 218 L639 231 L625 244" stroke="#818CF8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="650" y="155" width="205" height="155" rx="16" fill="#DCFCE7"/>
+  <path d="M700 188 C700 171 714 162 730 162 C746 162 760 171 760 188 V208 H700 V188Z" fill="#16A34A" opacity=".9"/>
+  <path d="M690 188 H770 V228 C770 237 762 245 753 245 H707 C698 245 690 237 690 228 V188Z" fill="#16A34A"/>
+  <path d="M716 210 L727 221 L746 200" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="752" y="277" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#166534">WhatsApp</text>
+
+  <rect x="76" y="372" width="11" height="89" rx="5.5" fill="#10B981"/>
+
+  <text x="108" y="407" font-family="Arial, sans-serif" font-size="35" font-weight="800" fill="#111827">My Hostel Mess Menu</text>
+  <text x="108" y="450" font-family="Arial, sans-serif" font-size="35" font-weight="800" fill="#111827">Automation with n8n</text>
+
+  <text x="108" y="503" font-family="Arial, sans-serif" font-size="21" fill="#64748B">Google Sheets  ·  WhatsApp Business API</text>
+</svg>

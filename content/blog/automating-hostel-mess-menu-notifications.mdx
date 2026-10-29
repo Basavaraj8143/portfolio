@@ -1,0 +1,71 @@
+---
+title: "Automating My Hostel Mess Menu Notifications with n8n"
+description: "How I built a simple workflow using n8n, Google Sheets, and the WhatsApp Business API to receive daily hostel mess menu reminders."
+date: "2026-10-29"
+slug: "automating-hostel-mess-menu-notifications"
+thumbnail: "/blog/automating-hostel-mess-menu-notifications.svg"
+tags:
+  - n8n
+  - Automation
+  - WhatsApp API
+  - Google Sheets
+category: "Automation"
+published: true
+readingTime: auto
+---
+
+## The Small Problem
+
+The hostel mess menu changes every week.
+
+Every day, I used to wonder what was being served for breakfast or dinner. Instead of checking the menu manually, I thought of a simple idea:
+
+**What if I received a WhatsApp message with the day's menu one hour before breakfast or dinner?**
+
+It wasn't a complicated problem, but it seemed like a good opportunity to try automation.
+
+## Building the Workflow
+
+I decided to use three things:
+
+- **n8n:** To connect the different steps and automate the workflow.
+- **Google Sheets:** To store the mess menu in a structured format.
+- **WhatsApp Business API:** To deliver the menu notification directly to WhatsApp.
+
+The idea was straightforward. I stored the menu in a spreadsheet and created a workflow that would run at the scheduled time, retrieve the relevant menu, and send me a message with a greeting and the details for the upcoming meal.
+
+Instead of opening a spreadsheet every day, I could receive the information automatically.
+
+## Learning How WhatsApp Messaging Works
+
+The most interesting part wasn't the workflow itself. It was understanding how the WhatsApp Business API handles messages.
+
+Initially, I assumed that an API would let me send any message whenever I wanted. But WhatsApp has rules for business-initiated messaging.
+
+I learned that:
+
+- **Message templates need approval:** When initiating a conversation outside the customer service window, you generally need an approved message template.
+- **The 24-hour window matters:** When a user messages a business, a customer service window opens. Free-form replies are permitted during that window.
+- **APIs have rules and limitations:** Integrating an API isn't just about making a successful request. You also need to understand the platform's policies and requirements.
+
+These restrictions made me realize that using an API involves more than writing code or connecting nodes in an automation tool.
+
+## What I Learned from This Experiment
+
+This was a small personal automation project, but it helped me understand how different services can work together.
+
+I got practical exposure to workflow automation with n8n, retrieving structured data from Google Sheets, scheduling notifications, and working with the WhatsApp Business API.
+
+More importantly, I learned to look at everyday inconveniences as potential automation problems.
+
+The project didn't need a complex frontend or a full-stack application. A simple workflow was enough to explore the idea.
+
+## Final Thoughts
+
+I started with one simple question: _What if I could know today's mess menu without checking it manually?_
+
+That question led me to explore automation tools, APIs, and messaging policies.
+
+It reminded me that learning doesn't always have to begin with a large project. Sometimes, a small problem in your daily routine is enough to teach you something new.
+
+And that's exactly what this experiment did for me.
