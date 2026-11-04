@@ -13,12 +13,12 @@ export function About() {
 
     useEffect(() => {
         if (isPaused) return;
-        
+
         const interval = setInterval(() => {
             if (scrollRef.current) {
                 const el = scrollRef.current;
                 const maxScrollLeft = el.scrollWidth - el.clientWidth;
-                
+
                 // Only act if there is overflow (mobile horizontal scroll)
                 if (maxScrollLeft > 0) {
                     if (el.scrollLeft >= maxScrollLeft - 10) {
@@ -53,14 +53,12 @@ export function About() {
             <div className="text-center max-w-4xl mx-auto mb-20">
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground tracking-tight">About Me</h2>
                 <p className="text-lg md:text-xl text-gray-500 leading-relaxed font-medium">
-                    I&apos;m <strong className="text-foreground font-black">{siteData.shortName}</strong>, a CSE student who enjoys contributing to large open-source codebases,
-                    exploring new technologies, and solving problems with structured workflows. I enjoy adapting to different tools and challenges rather than limiting myself to a single stack.
-                    With 200+ LeetCode problems and 5+ hackathons, I&apos;m constantly learning by building, contributing, and solving.
+                    I&apos;m <strong className="text-foreground font-black">{siteData.shortName}</strong>, a Computer Science and Engineering student interested in building software and understanding the systems behind it. I&apos;ve built projects across backend engineering, distributed systems, full-stack development, and developer tools, while contributing to <strong className="text-foreground font-black">open source</strong> along the way. With 250+ LeetCode problems solved and 5+ hackathons participated in, I&apos;m always looking to learn, experiment, and take on meaningful engineering challenges.
                 </p>
             </div>
 
             {/* Container turns into horizontal scroll on mobile, grid on desktop */}
-            <div 
+            <div
                 ref={scrollRef}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
@@ -110,11 +108,10 @@ export function About() {
                                 setCurrentIndex(index);
                             }
                         }}
-                        className={`transition-all duration-300 rounded-full ${
-                            currentIndex === index
+                        className={`transition-all duration-300 rounded-full ${currentIndex === index
                                 ? "w-3 h-3 bg-[#111111] shadow-md"
                                 : "w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400"
-                        }`}
+                            }`}
                         aria-label={`Go to card ${index + 1}`}
                         suppressHydrationWarning
                     />
